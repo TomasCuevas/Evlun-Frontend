@@ -1,0 +1,29 @@
+.input__container {
+  position: relative;
+  display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  border: 1px solid #B6B7BD;
+  border-radius: 2px;
+  padding: 0 20px;
+  height: 60px;
+  
+  .label {
+    position: absolute;
+    transition: .2s ease-in;
+    font-weight: 500;
+    color: #B6B7BD;
+  }
+  
+  .input {
+    width: 100%;
+    padding-top: 10px;
+    border: none;
+    outline: none;
+    color: #EBEBEC;
+    font-size: 18px;
+    font-weight: 500;
+    background: none;
+  }
+}
