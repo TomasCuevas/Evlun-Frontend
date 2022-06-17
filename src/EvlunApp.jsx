@@ -23,9 +23,10 @@ export const EvlunApp = () => {
           <Router>
             <Routes>
 
-              <Route path="/" element={ (auth) ? <MainPage /> : <LoginPage /> } />
-              <Route path="/signup" element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
-              <Route path="/login" element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
+              <Route path='/' element={ (auth) ? <MainPage /> : <LoginPage /> } />
+              <Route path='/signup' element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
+              <Route path='/login' element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
+              <Route path='*' element={ <Navigate to='/' /> } />
 
             </Routes>
           </Router>
