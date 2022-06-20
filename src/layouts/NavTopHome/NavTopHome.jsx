@@ -1,10 +1,9 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 /**
  * @components
  */
-import { Container } from '../Container/Container';
-import { NavLeftHome } from './';
+import { Container } from '../../components/Container/Container';
 
 /**
  * @styles
@@ -15,14 +14,13 @@ import styles from './navTopHome.module.scss';
  * context
  */
 import { AuthContext } from '../../context/AuthContext/AuthContext';
+import { MainContext } from '../../context/MainContext/MainContext';
 
 export const NavTopHome = () => {
   const { user } = useContext(AuthContext);
-  const [navActive, setNavActive] = useState(false);
+  const { navSwitchState, onNavSwitch } = useContext(MainContext);
 
   const { avatar } = user;
-
-  const onNavActive = () => setNavActive( !navActive );
   
   return (
     <>
@@ -32,7 +30,7 @@ export const NavTopHome = () => {
           <nav className={styles.nav__container}>
             <div 
               className={styles.avatar__container}
-              onClick={onNavActive}
+              onClick={() => onNavSwitch(true)}
             >
               <img 
                 src={avatar} 
@@ -47,10 +45,6 @@ export const NavTopHome = () => {
         </Container>
 
       </div>
-
-      {
-        (navActive) && <NavLeftHome handleNavActive={onNavActive} />
-      }
     </>
   )
 }
