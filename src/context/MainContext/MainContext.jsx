@@ -3,15 +3,15 @@ import { createContext, useState } from 'react';
 export const MainContext = createContext();
 
 export const MainProvider = ({ children }) => {
-  const [navSwitchState, setNavSwitchState ] = useState(false);
+  const [navSwitch, setNavSwitch ] = useState(false);
 
   const onNavSwitch = ( newValue = false ) => {
-    setNavSwitchState( newValue );
+    setNavSwitch( newValue );
   }
   
   return (
     <MainContext.Provider value={{ 
-      navSwitchState, 
+      navSwitch, 
       onNavSwitch 
     }}>
       { children }
