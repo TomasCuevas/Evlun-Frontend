@@ -1,0 +1,56 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+
+  .profile__top {
+
+    .profile__img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .profile__medium {
+    display: flex;
+    flex-direction: column;
+
+    .profile__info {
+
+      .name {
+        color: #EBEBEC;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .username {
+        color: #B6B7BD;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .profile__bottom {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+
+    .profile__numbers_container {
+      
+      .profile__numbers {
+        color: #B6B7BD;
+        font-size: 14px;
+        font-weight: 300;
+
+        span {
+          color: #EBEBEC;
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
