@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 /**
  * @components
@@ -11,8 +11,16 @@ import { NavLeftHome } from './';
  */
 import styles from './navTopHome.module.scss';
 
+/**
+ * context
+ */
+import { AuthContext } from '../../context/AuthContext/AuthContext';
+
 export const NavTopHome = () => {
+  const { user } = useContext(AuthContext);
   const [navActive, setNavActive] = useState(false);
+
+  const { avatar } = user;
 
   const onNavActive = () => setNavActive( !navActive );
   
@@ -27,7 +35,7 @@ export const NavTopHome = () => {
               onClick={onNavActive}
             >
               <img 
-                src='https://res.cloudinary.com/dn3kl3egc/image/upload/v1636226226/Avatar/avatar_default.png' 
+                src={avatar} 
                 alt='profile-img' 
                 className={styles.avatar__img}
               />
