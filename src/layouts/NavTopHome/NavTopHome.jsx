@@ -18,7 +18,7 @@ import { MainContext } from '../../context/MainContext/MainContext';
 
 export const NavTopHome = () => {
   const { user } = useContext(AuthContext);
-  const { navSwitchState, onNavSwitch } = useContext(MainContext);
+  const { onNavSwitch } = useContext(MainContext);
 
   const { avatar } = user;
   
