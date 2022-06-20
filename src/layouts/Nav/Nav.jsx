@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 /**
@@ -10,7 +11,14 @@ import { BsHouseDoorFill, BsSearch, BsFillPersonFill } from 'react-icons/bs';
  */
 import styles from './nav.module.scss';
 
+/**
+ * @context
+ */
+import { AuthContext } from '../../context/AuthContext/AuthContext';
+
 export const Nav = () => {
+  const { user } = useContext(AuthContext);
+  const { username } = user;
 
   return (
     <nav className={styles.nav__container}>
@@ -27,7 +35,7 @@ export const Nav = () => {
         <BsSearch className={styles.nav__icon} />
       </Link>
       <Link 
-        to={`/user`} 
+        to={`/${username}}`} 
         className={styles.nav__item}
       >
         <BsFillPersonFill className={styles.nav__icon} />
