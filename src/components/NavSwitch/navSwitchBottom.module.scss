@@ -1,0 +1,19 @@
+.bottom {
+  width: 100%;
+  
+  .logout__container {
+    height: 50px;
+    border-top: 1px solid #B6B7BD;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
+  
+    .text {
+      color: #B6B7BD;
+      font-size: 1.1rem;
+    }
+  }
+}
