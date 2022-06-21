@@ -6,6 +6,8 @@ import { useContext } from 'react';
 import { Container } from '../../components/Container/Container';
 import { NavSwitchTop } from '../../components/NavSwitch/NavSwitchTop';
 import { NavSwitchProfile } from '../../components/NavSwitch/NavSwitchProfile';
+import { NavSwitchNav } from '../../components/NavSwitch/NavSwitchNav';
+import { NavSwitchBottom } from '../../components/NavSwitch/NavSwitchBottom';
 
 /**
  * @styles
@@ -36,6 +38,10 @@ export const NavSwitch = () => {
             <NavSwitchProfile />
 
             {/* NAV */}
+            <NavSwitchNav />
+
+            {/* BOTTOM */}
+            <NavSwitchBottom />
 
           </div>
         </Container>
