@@ -1,0 +1,30 @@
+a {
+  text-decoration: none;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    width: 100%;
+  }
+
+  .icon__container {
+    color: #B6B7BD;
+    font-size: 1.1rem;
+  }
+
+  .text__container {
+    color: #B6B7BD;
+    font-size: 1.1rem;
+  }
+}
+.nav__item:hover {
+  background-color: #24203F;
+}
