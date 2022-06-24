@@ -1,0 +1,8 @@
+.feedposts__container {
+  min-height: 100vh;
+
+  .allposts__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
