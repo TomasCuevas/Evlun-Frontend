@@ -16,7 +16,7 @@ import { FeedPost } from "../../layouts/FeedPosts/FeedPosts"
 /**
  * @provider
  */
-import { MainProvider } from "../../context/MainContext/MainContext"
+import { NavSwitchProvider } from "../../context/NavSwitchContext/NavSwitchContext"
 
 /**
  * @context
@@ -41,13 +41,13 @@ export const MainPage = () => {
   }, [])
 
   return (
-    <MainProvider>
-        <NavTopHome />
-        <Nav />
-        <NavSwitch />
+    <NavSwitchProvider>
+      <NavTopHome />
+      <Nav />
+      <NavSwitch />
       <Main>
         <FeedPost />
       </Main>
-    </MainProvider>
+    </NavSwitchProvider>
   )
 }
