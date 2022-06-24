@@ -4,8 +4,9 @@
   width: 100%;
   border-bottom: 1px solid #EBEBEC;
   height: 50px;
-  background-color: #0B0C23;
-  backdrop-filter: blur(10px);
+  background: #0001;
+  z-index: 1;
+  backdrop-filter: blur(30px);
 }
 
 .nav__container {
