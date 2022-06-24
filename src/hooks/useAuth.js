@@ -15,7 +15,7 @@ export const useAuth = ( token ) => {
       });
     } else {
       setAuth({
-        auth: false,
+        auth: true,
         loading: false
       });
     }
