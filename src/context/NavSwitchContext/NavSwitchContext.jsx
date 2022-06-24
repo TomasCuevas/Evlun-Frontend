@@ -1,8 +1,8 @@
 import { createContext, useState } from 'react';
 
-export const MainContext = createContext();
+export const NavSwitchContext = createContext();
 
-export const MainProvider = ({ children }) => {
+export const NavSwitchProvider = ({ children }) => {
   const [navSwitch, setNavSwitch ] = useState(false);
 
   const onNavSwitch = ( newValue = false ) => {
@@ -10,11 +10,11 @@ export const MainProvider = ({ children }) => {
   }
   
   return (
-    <MainContext.Provider value={{ 
+    <NavSwitchContext.Provider value={{ 
       navSwitch, 
       onNavSwitch 
     }}>
       { children }
-    </MainContext.Provider>
+    </NavSwitchContext.Provider>
   )
 }
