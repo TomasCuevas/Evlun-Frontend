@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 /**
  * @context
@@ -20,16 +20,14 @@ export const EvlunApp = () => {
     <>
       {
         !loading && (
-          <Router>
-            <Routes>
+          <Routes>
 
-              <Route path='/' element={ (auth) ? <MainPage /> : <LoginPage /> } />
-              <Route path='/signup' element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
-              <Route path='/login' element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
-              <Route path='*' element={ <Navigate to='/' /> } />
+            <Route path='/' element={ (auth) ? <MainPage /> : <LoginPage /> } />
+            <Route path='/signup' element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
+            <Route path='/login' element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
+            <Route path='*' element={ <Navigate to='/' /> } />
 
-            </Routes>
-          </Router>
+          </Routes>
         )
       }
     </>
