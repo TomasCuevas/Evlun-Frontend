@@ -11,6 +11,7 @@ import { Main } from "../../components/Main/Main"
 import { Nav } from "../../layouts/Nav/Nav"
 import { NavSwitch } from "../../layouts/NavSwitch/NavSwitch"
 import { NavTopHome } from "../../layouts/NavTopHome/NavTopHome"
+import { FeedPost } from "../../layouts/FeedPosts/FeedPosts"
 
 /**
  * @provider
@@ -41,10 +42,11 @@ export const MainPage = () => {
 
   return (
     <MainProvider>
-      <Main>
         <NavTopHome />
         <Nav />
         <NavSwitch />
+      <Main>
+        <FeedPost />
       </Main>
     </MainProvider>
   )
