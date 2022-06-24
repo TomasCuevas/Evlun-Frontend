@@ -12,6 +12,7 @@ import { AuthContext } from './context/AuthContext/AuthContext';
 import { MainPage } from './pages/MainPage/MainPage';
 import { SignupPage } from './pages/SignupPage/SignupPage';
 import { LoginPage } from './pages/LoginPage/LoginPage';
+import { ExplorePage } from './pages/ExplorePage/ExplorePage';
 
 export const EvlunApp = () => {
   const { auth, loading } = useContext(AuthContext);
@@ -25,6 +26,7 @@ export const EvlunApp = () => {
             <Route path='/' element={ (auth) ? <MainPage /> : <LoginPage /> } />
             <Route path='/signup' element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
             <Route path='/login' element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
+            <Route path='/explore' element={ <ExplorePage /> } />
             <Route path='*' element={ <Navigate to='/' /> } />
 
           </Routes>
