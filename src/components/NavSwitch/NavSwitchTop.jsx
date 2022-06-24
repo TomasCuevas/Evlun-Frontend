@@ -13,10 +13,10 @@ import styles from './navSwitchTop.module.scss';
 /**
  * @context
  */
-import { MainContext } from '../../context/MainContext/MainContext';
+import { NavSwitchContext } from '../../context/NavSwitchContext/NavSwitchContext';
 
 export const NavSwitchTop = () => {
-  const { onNavSwitch } = useContext(MainContext);
+  const { onNavSwitch } = useContext(NavSwitchContext);
 
   return (
     <section className={styles.top}>
