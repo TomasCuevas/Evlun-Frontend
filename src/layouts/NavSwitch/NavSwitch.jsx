@@ -17,10 +17,10 @@ import styles from './navSwitch.module.scss';
 /**
  * @contexts
  */
-import { MainContext } from '../../context/MainContext/MainContext';
+import { NavSwitchContext } from '../../context/NavSwitchContext/NavSwitchContext';
 
 export const NavSwitch = () => {
-  const { navSwitch, onNavSwitch } = useContext(MainContext);
+  const { navSwitch, onNavSwitch } = useContext(NavSwitchContext);
   
   if (!navSwitch) return <></>
   
@@ -31,16 +31,9 @@ export const NavSwitch = () => {
         <Container>
           <div className={styles.navleft}>
 
-            {/* TOP */}
             <NavSwitchTop />
-
-            {/* PROFILE */}
             <NavSwitchProfile />
-
-            {/* NAV */}
             <NavSwitchNav />
-
-            {/* BOTTOM */}
             <NavSwitchBottom />
 
           </div>
