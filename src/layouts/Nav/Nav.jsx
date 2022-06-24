@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 /**
  * @icons
@@ -22,24 +22,24 @@ export const Nav = () => {
 
   return (
     <nav className={styles.nav__container}>
-      <Link 
+      <NavLink 
         to='/' 
-        className={styles.nav__item}
+        className={({isActive}) => (isActive) ? styles.nav__item_active : styles.nav__item}
       >
         <BsHouseDoorFill className={styles.nav__icon} />
-      </Link>
-      <Link 
+      </NavLink>
+      <NavLink 
         to='/explore' 
-        className={styles.nav__item}
+        className={({isActive}) => (isActive) ? styles.nav__item_active : styles.nav__item}
       >
         <BsSearch className={styles.nav__icon} />
-      </Link>
-      <Link 
+      </NavLink>
+      <NavLink 
         to={`/${username}}`} 
-        className={styles.nav__item}
+        className={({isActive}) => (isActive) ? styles.nav__item_active : styles.nav__item}
       >
         <BsFillPersonFill className={styles.nav__icon} />
-      </Link>
+      </NavLink>
     </nav>
   )
 }
