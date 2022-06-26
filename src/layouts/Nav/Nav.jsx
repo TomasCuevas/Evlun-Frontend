@@ -35,7 +35,7 @@ export const Nav = () => {
         <BsSearch className={styles.nav__icon} />
       </NavLink>
       <NavLink 
-        to={`/${username}}`} 
+        to={`/profile/${username}`} 
         className={({isActive}) => (isActive) ? styles.nav__item_active : styles.nav__item}
       >
         <BsFillPersonFill className={styles.nav__icon} />
