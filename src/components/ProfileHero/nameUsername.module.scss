@@ -1,0 +1,17 @@
+.info__user_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  .name {
+    color: #EBEBEC;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .username {
+    color: #B6B7BD;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
