@@ -1,0 +1,18 @@
+.container__all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .username {
+    color: #EBEBEC;
+    font-weight: 700;
+  }
+
+  .count__posts {
+    color: #B6B7BD;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
