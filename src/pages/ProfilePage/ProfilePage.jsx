@@ -9,6 +9,7 @@ import { Main } from '../../components/Main/Main';
 /**
  * @layouts
  */
+import { FeedPost } from '../../layouts/FeedPosts/FeedPosts';
 import { Nav } from '../../layouts/Nav/Nav';
 import { NavTopProfile } from '../../layouts/NavTopProfile/NavTopProfile';
 import { ProfileHero } from '../../layouts/ProfileHero/ProfileHero';
@@ -37,6 +38,7 @@ export const ProfilePage = () => {
       <NavTopProfile />
       <Main>
         <ProfileHero />
+        <FeedPost />
       </Main>
     </NavSwitchProvider>
   );
