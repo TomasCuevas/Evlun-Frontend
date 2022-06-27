@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * @styles
@@ -12,10 +13,14 @@ import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 export const NavSwitchProfile = () => {
   const { user } = useContext(AuthContext);
-  const { avatar, name, username, following, followers } = user;
+  const navigate = useNavigate();
+
+  const { avatar, name, username, followings, followers } = user;
+
+  const onNavigate = () => navigate(`profile/${username}`);
 
   return (
-    <section className={styles.profile}>
+    <section className={styles.profile} onClick={onNavigate}>
       <div className={styles.profile__top}>
         <img src={avatar} alt='profile-img' className={styles.profile__img} />
       </div>
@@ -32,7 +37,7 @@ export const NavSwitchProfile = () => {
       <div className={styles.profile__bottom}>
         <div className={styles.profile__numbers_container}>
           <p className={styles.profile__numbers}>
-            <span>{following}</span> Siguiendo
+            <span>{followings}</span> Siguiendo
           </p>
         </div>
         <div className={styles.profile__numbers_container}>
