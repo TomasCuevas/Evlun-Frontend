@@ -4,24 +4,24 @@
   // flex-direction: column;
   // justify-content: center;
   align-items: center;
-  border: 1px solid #B6B7BD;
+  border: 1px solid #b6b7bd;
   border-radius: 2px;
   padding: 0 20px;
   height: 60px;
-  
+
   .label {
     position: absolute;
-    transition: .2s ease-in;
+    transition: 0.2s ease-in;
     font-weight: 500;
-    color: #B6B7BD;
+    color: #b6b7bd;
   }
-  
+
   .input {
     width: 100%;
     padding-top: 10px;
     border: none;
     outline: none;
-    color: #EBEBEC;
+    color: #ebebec;
     font-size: 18px;
     font-weight: 500;
     background: none;

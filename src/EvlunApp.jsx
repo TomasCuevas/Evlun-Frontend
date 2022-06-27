@@ -22,27 +22,32 @@ import { ProfilePage } from './pages/ProfilePage/ProfilePage';
 
 export const EvlunApp = () => {
   const { auth, loading } = useContext(AuthContext);
-  
+
   return (
     <>
-      {
-        !loading && (
-          <Routes>
-
-            <Route path='/' element={ (auth) ? <MainPage /> : <LoginPage /> } />
-            <Route path='/signup' element={ (auth) ? <Navigate to='/' /> : <SignupPage /> } />
-            <Route path='/login' element={ (auth) ? <Navigate to='/' /> : <LoginPage /> } />
-            <Route path='/explore' element={ <ExplorePage /> } />
-            <Route path='/profile/:username' element={
+      {!loading && (
+        <Routes>
+          <Route path='/' element={auth ? <MainPage /> : <LoginPage />} />
+          <Route
+            path='/signup'
+            element={auth ? <Navigate to='/' /> : <SignupPage />}
+          />
+          <Route
+            path='/login'
+            element={auth ? <Navigate to='/' /> : <LoginPage />}
+          />
+          <Route path='/explore' element={<ExplorePage />} />
+          <Route
+            path='/profile/:username'
+            element={
               <ProfileProvider>
                 <ProfilePage />
               </ProfileProvider>
-            } />
-            <Route path='*' element={ <Navigate to='/' /> } />
-
-          </Routes>
-        )
-      }
+            }
+          />
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+      )}
     </>
-  )
-}
+  );
+};

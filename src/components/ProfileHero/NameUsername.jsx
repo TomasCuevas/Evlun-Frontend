@@ -1,14 +1,14 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
 /**
  * @styles
  */
-import Styles from "./nameUsername.module.scss";
+import Styles from './nameUsername.module.scss';
 
 /**
  * @context
  */
-import { AuthContext } from "../../context/AuthContext/AuthContext";
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 export const NameUsername = () => {
   const { name, username } = useContext(AuthContext);

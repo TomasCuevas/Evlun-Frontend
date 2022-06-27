@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 /**
  * @icons
  */
-import { MdMoreHoriz } from 'react-icons/md'
+import { MdMoreHoriz } from 'react-icons/md';
 
 /**
  * @styles
@@ -15,27 +16,18 @@ export const PostTop = ({ name, username, date }) => {
 
   return (
     <div className={styles.post__top}>
-      
       <div className={styles.post__top_left}>
         <div className={styles.post__top_name}>
-          <span className={styles.post__name}>
-            { name }
-          </span>
+          <span className={styles.post__name}>{name}</span>
         </div>
         <div className={styles.post__top_username}>
-          <span className={styles.post__username}>
-            { username }
-          </span>
+          <span className={styles.post__username}>{username}</span>
         </div>
         <div className={styles.post__top_decorate}>
-          <span className={styles.post__decorate}>
-            ·
-          </span>
+          <span className={styles.post__decorate}>·</span>
         </div>
         <div className={styles.post__top_relativetime}>
-          <span className={styles.post__relativetime}>
-            { relativeTime }
-          </span>
+          <span className={styles.post__relativetime}>{relativeTime}</span>
         </div>
       </div>
 
@@ -44,7 +36,12 @@ export const PostTop = ({ name, username, date }) => {
           <MdMoreHoriz className={styles.option__icon} />
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
+
+PostTop.propTypes = {
+  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};

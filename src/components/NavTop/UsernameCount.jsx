@@ -1,14 +1,14 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
 /**
  * @styles
  */
-import Styles from "./usernameCount.module.scss";
+import Styles from './usernameCount.module.scss';
 
 /**
  * @context
  */
-import { ProfileContext } from "../../context/ProfileContext/ProfileContext";
+import { ProfileContext } from '../../context/ProfileContext/ProfileContext';
 
 export const UsernameCount = () => {
   const { username, countPosts } = useContext(ProfileContext);

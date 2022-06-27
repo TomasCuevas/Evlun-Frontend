@@ -1,7 +1,11 @@
 /**
  * @icons
  */
-import { MdOutlineChatBubbleOutline, MdOutlineFavoriteBorder, MdOutlineFavorite } from 'react-icons/md';
+import {
+  MdOutlineChatBubbleOutline,
+  MdOutlineFavoriteBorder,
+  MdOutlineFavorite,
+} from 'react-icons/md';
 
 /**
  * @styles
@@ -9,7 +13,6 @@ import { MdOutlineChatBubbleOutline, MdOutlineFavoriteBorder, MdOutlineFavorite 
 import styles from './postBottom.module.scss';
 
 export const PostBottom = () => {
-
   return (
     <div className={styles.post__bottom}>
       <div className={styles.comment__icon_container}>
@@ -19,5 +22,5 @@ export const PostBottom = () => {
         <MdOutlineFavoriteBorder />
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,27 +1,27 @@
-import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 /**
  * @components
  */
-import { Main } from "../../components/Main/Main";
+import { Main } from '../../components/Main/Main';
 
 /**
  * @layouts
  */
-import { Nav } from "../../layouts/Nav/Nav";
-import { NavTopProfile } from "../../layouts/NavTopProfile/NavTopProfile";
-import { ProfileHero } from "../../layouts/ProfileHero/ProfileHero";
+import { Nav } from '../../layouts/Nav/Nav';
+import { NavTopProfile } from '../../layouts/NavTopProfile/NavTopProfile';
+import { ProfileHero } from '../../layouts/ProfileHero/ProfileHero';
 
 /**
  * @provider
  */
-import { NavSwitchProvider } from "../../context/NavSwitchContext/NavSwitchContext";
+import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
 
 /**
  * @context
  */
-import { ProfileContext } from "../../context/ProfileContext/ProfileContext";
+import { ProfileContext } from '../../context/ProfileContext/ProfileContext';
 
 export const ProfilePage = () => {
   const { onChangeUsername } = useContext(ProfileContext);

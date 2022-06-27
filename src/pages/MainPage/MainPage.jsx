@@ -1,44 +1,43 @@
-import { useEffect, useContext } from "react"
+import { useEffect, useContext } from 'react';
 
 /**
  * @components
  */
-import { Main } from "../../components/Main/Main"
+import { Main } from '../../components/Main/Main';
 
 /**
  * layouts
  */
-import { Nav } from "../../layouts/Nav/Nav"
-import { NavSwitch } from "../../layouts/NavSwitch/NavSwitch"
-import { NavTopHome } from "../../layouts/NavTopHome/NavTopHome"
-import { FeedPost } from "../../layouts/FeedPosts/FeedPosts"
+import { Nav } from '../../layouts/Nav/Nav';
+import { NavSwitch } from '../../layouts/NavSwitch/NavSwitch';
+import { NavTopHome } from '../../layouts/NavTopHome/NavTopHome';
+import { FeedPost } from '../../layouts/FeedPosts/FeedPosts';
 
 /**
  * @provider
  */
-import { NavSwitchProvider } from "../../context/NavSwitchContext/NavSwitchContext"
+import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
 
 /**
  * @context
  */
-import { AuthContext } from "../../context/AuthContext/AuthContext"
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 /**
  * @fixtureData
  */
-import { user } from "../../fixtures/user"
+import { user } from '../../fixtures/user';
 
 export const MainPage = () => {
   const { login } = useContext(AuthContext);
 
   useEffect(() => {
-    const onLogin = async() => {
+    const onLogin = async () => {
       login('abc123', user);
-    }
-    
+    };
+
     onLogin();
-      
-  }, [])
+  }, []);
 
   return (
     <NavSwitchProvider>
@@ -49,5 +48,5 @@ export const MainPage = () => {
         <FeedPost />
       </Main>
     </NavSwitchProvider>
-  )
-}
+  );
+};

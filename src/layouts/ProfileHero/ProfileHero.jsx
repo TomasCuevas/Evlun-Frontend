@@ -1,7 +1,7 @@
 /**
  * @components
  */
-import { Container } from "../../components/Container/Container";
+import { Container } from '../../components/Container/Container';
 import {
   AvatarOptions,
   Banner,
@@ -9,7 +9,7 @@ import {
   FollowingsFollowers,
   LocationMoment,
   NameUsername,
-} from "../../components/ProfileHero";
+} from '../../components/ProfileHero';
 
 export const ProfileHero = () => {
   return (

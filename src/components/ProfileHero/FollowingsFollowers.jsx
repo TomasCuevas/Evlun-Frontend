@@ -1,14 +1,14 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
 /**
  * @styles
  */
-import Styles from "./followingsFollowers.module.scss";
+import Styles from './followingsFollowers.module.scss';
 
 /**
  * @context
  */
-import { AuthContext } from "../../context/AuthContext/AuthContext";
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 export const FollowingsFollowers = () => {
   const { followings, followers } = useContext(AuthContext);

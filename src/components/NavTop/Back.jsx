@@ -1,12 +1,12 @@
 /**
  * @icons
  */
-import { BsArrowLeftShort } from "react-icons/bs";
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 /**
  * @styles
  */
-import Styles from "./back.module.scss";
+import Styles from './back.module.scss';
 
 export const Back = () => {
   return (

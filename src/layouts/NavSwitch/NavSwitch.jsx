@@ -21,26 +21,26 @@ import { NavSwitchContext } from '../../context/NavSwitchContext/NavSwitchContex
 
 export const NavSwitch = () => {
   const { navSwitch, onNavSwitch } = useContext(NavSwitchContext);
-  
-  if (!navSwitch) return <></>
-  
+
+  if (!navSwitch) return <></>;
+
   return (
     <div className={styles.navleft__container_all}>
-      
       <section className={styles.navleft__container}>
         <Container>
           <div className={styles.navleft}>
-
             <NavSwitchTop />
             <NavSwitchProfile />
             <NavSwitchNav />
             <NavSwitchBottom />
-
           </div>
         </Container>
       </section>
-      
-      <section className={styles.blur} onClick={() => onNavSwitch(false)}></section>
+
+      <section
+        className={styles.blur}
+        onClick={() => onNavSwitch(false)}
+      ></section>
     </div>
-  )
-}
+  );
+};

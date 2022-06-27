@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import styles from './navSwitchBottom.module.scss';
 
 export const NavSwitchBottom = () => {
-
   return (
     <section className={styles.bottom}>
       <div className={styles.logout__container}>
@@ -15,5 +14,5 @@ export const NavSwitchBottom = () => {
         </Link>
       </div>
     </section>
-  )
-}
+  );
+};

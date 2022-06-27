@@ -1,14 +1,24 @@
+import PropTypes from 'prop-types';
+
+/**
+ * @styles
+ */
 import styles from './form.module.scss';
 
-export const Form = ({ autocomplete, formSubmit, children }) => {
-
+export const Form = ({ autocomplete = 'off', formSubmit, children }) => {
   return (
-    <form 
+    <form
       onSubmit={formSubmit}
       className={styles.form__container}
       autoComplete={autocomplete}
     >
-      { children }
+      {children}
     </form>
-  )
-}
+  );
+};
+
+Form.propTypes = {
+  autocomplete: PropTypes.string,
+  formSubmit: PropTypes.func.isRequired,
+  children: PropTypes.element,
+};

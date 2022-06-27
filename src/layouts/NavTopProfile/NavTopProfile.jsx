@@ -1,14 +1,14 @@
 /**
  * @components
  */
-import { Container } from "../../components/Container/Container";
-import { Back } from "../../components/NavTop/Back";
-import { UsernameCount } from "../../components/NavTop/UsernameCount";
+import { Container } from '../../components/Container/Container';
+import { Back } from '../../components/NavTop/Back';
+import { UsernameCount } from '../../components/NavTop/UsernameCount';
 
 /**
  * @styles
  */
-import Styles from "./navTopProfile.module.scss";
+import Styles from './navTopProfile.module.scss';
 
 export const NavTopProfile = () => {
   return (

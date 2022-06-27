@@ -5,7 +5,6 @@
   width: 100%;
 
   .profile__top {
-
     .profile__img {
       height: 40px;
       width: 40px;
@@ -18,15 +17,14 @@
     flex-direction: column;
 
     .profile__info {
-
       .name {
-        color: #EBEBEC;
+        color: #ebebec;
         font-size: 18px;
         font-weight: 600;
       }
 
       .username {
-        color: #B6B7BD;
+        color: #b6b7bd;
         font-size: 14px;
         font-weight: 300;
       }
@@ -39,14 +37,13 @@
     margin-top: 10px;
 
     .profile__numbers_container {
-      
       .profile__numbers {
-        color: #B6B7BD;
+        color: #b6b7bd;
         font-size: 14px;
         font-weight: 300;
 
         span {
-          color: #EBEBEC;
+          color: #ebebec;
           font-size: 15px;
           font-weight: 700;
         }

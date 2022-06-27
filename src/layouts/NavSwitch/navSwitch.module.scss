@@ -9,8 +9,8 @@
   .navleft__container {
     width: 70%;
     max-width: 70%;
-    background-color: #0B0C23;
-    box-shadow: 1px 0 5px #B6B7BD;
+    background-color: #0b0c23;
+    box-shadow: 1px 0 5px #b6b7bd;
 
     .navleft {
       display: flex;
@@ -18,13 +18,12 @@
       gap: 20px;
       padding: 5px 0;
     }
-    
   }
 
   .blur {
     width: 30%;
     max-width: 30%;
-    background-color: #24203F5F;
+    background-color: #24203f5f;
     backdrop-filter: blur(5px);
   }
 }

@@ -20,21 +20,21 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #EBEBEC;
-      
+      color: #ebebec;
+
       .post__name {
         width: 100%;
         font-size: 14px;
       }
     }
-    
+
     .post__top_username {
       max-width: 40%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #B6B7BD;
-      
+      color: #b6b7bd;
+
       .post__username {
         font-size: 13px;
       }
@@ -44,17 +44,17 @@
       display: flex;
       align-items: center;
       height: 100%;
-      color: #B6B7BD;
+      color: #b6b7bd;
     }
-  
+
     .post__top_relativetime {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      
+
       .post__relativetime {
         font-size: 13px;
-        color: #B6B7BD;
+        color: #b6b7bd;
       }
     }
   }
@@ -68,7 +68,7 @@
 
     .option__icon {
       font-size: 20px;
-      color: #B6B7BD;
+      color: #b6b7bd;
     }
   }
 }

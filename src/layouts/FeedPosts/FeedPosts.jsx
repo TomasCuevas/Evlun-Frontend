@@ -11,7 +11,7 @@ import { Post } from '../Post/Post';
 /**
  * @styles
  */
-import styles from './feedPost.module.scss';
+import styles from './feedPosts.module.scss';
 
 /**
  * @fixtureData
@@ -25,13 +25,11 @@ export const FeedPost = () => {
     <section className={styles.feedposts__container}>
       <Container>
         <div className={styles.allposts__container}>
-          {
-            allPosts.map((post) => (
-              <Post key={post.id} post={ post } />
-            ))
-          }
+          {allPosts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid #EBEBEC;
+  border-bottom: 1px solid #ebebec;
   height: 50px;
   background: #0001;
   z-index: 1;
@@ -18,7 +18,7 @@
 
   .avatar__container {
     height: 30px;
-    
+
     .avatar__img {
       height: 30px;
       border-radius: 50%;
@@ -26,11 +26,10 @@
   }
 
   .newposts__container {
-
     .newposts {
       font-weight: 700;
       font-size: 18px;
-      color: #EBEBEC;
+      color: #ebebec;
     }
   }
 }

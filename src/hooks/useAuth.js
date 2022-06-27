@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
-export const useAuth = ( token ) => {
+export const useAuth = (token) => {
   const [{ auth, loading }, setAuth] = useState({
     auth: false,
-    loading: true
+    loading: true,
   });
-
 
   useEffect(() => {
     if (token) {
       setAuth({
         auth: true,
-        loading: false
+        loading: false,
       });
     } else {
       setAuth({
         auth: true,
-        loading: false
+        loading: false,
       });
     }
-  }, [])
+  }, []);
 
   return [auth, loading];
-}
+};
