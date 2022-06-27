@@ -1,7 +1,11 @@
 /**
- * @styles
+ * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+
+/**
+ * @styles
+ */
 import styles from './explore.module.scss';
 
 export const Explore = () => {
