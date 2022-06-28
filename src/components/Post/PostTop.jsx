@@ -43,5 +43,5 @@ export const PostTop = ({ name, username, date }) => {
 PostTop.propTypes = {
   name: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
 };

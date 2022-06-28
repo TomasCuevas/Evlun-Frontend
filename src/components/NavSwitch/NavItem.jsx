@@ -23,6 +23,6 @@ export const NavItem = ({ link, icon: Icon, text }) => {
 
 NavItem.propTypes = {
   link: PropTypes.string.isRequired,
-  icon: PropTypes.element,
+  icon: PropTypes.func,
   text: PropTypes.string.isRequired,
 };

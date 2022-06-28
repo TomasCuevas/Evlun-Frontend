@@ -22,5 +22,5 @@ export const Avatar = ({ avatar }) => {
 };
 
 Avatar.propTypes = {
-  avatar: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
 };

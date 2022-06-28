@@ -23,5 +23,5 @@ export const NavSwitchProvider = ({ children }) => {
 };
 
 NavSwitchProvider.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
 };
