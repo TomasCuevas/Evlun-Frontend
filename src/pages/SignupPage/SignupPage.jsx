@@ -69,11 +69,7 @@ export const SignupPage = () => {
           <FormButtonPrimary buttonText='Registrarme' buttonSubmit={onSubmit} />
         </Form>
 
-        <FormQuestion
-          question='¿Ya tienes una cuenta?'
-          linkQuestion='Iniciar sesión'
-          link='/'
-        />
+        <FormQuestion question='¿Ya tienes una cuenta?' linkQuestion='Iniciar sesión' link='/' />
       </Container>
     </Main>
   );
