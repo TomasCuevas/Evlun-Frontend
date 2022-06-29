@@ -14,11 +14,12 @@ import { ProfileProvider } from './context/ProfileContext/ProfileContext';
 /**
  * @pages
  */
-import { MainPage } from './pages/MainPage/MainPage';
-import { SignupPage } from './pages/SignupPage/SignupPage';
-import { LoginPage } from './pages/LoginPage/LoginPage';
 import { ExplorePage } from './pages/ExplorePage/ExplorePage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { MainPage } from './pages/MainPage/MainPage';
 import { ProfilePage } from './pages/ProfilePage/ProfilePage';
+import { SettingsPage } from './pages/SettingsPage/SettingsPage';
+import { SignupPage } from './pages/SignupPage/SignupPage';
 
 export const EvlunApp = () => {
   const { auth, loading } = useContext(AuthContext);
@@ -28,15 +29,10 @@ export const EvlunApp = () => {
       {!loading && (
         <Routes>
           <Route path='/' element={auth ? <MainPage /> : <LoginPage />} />
-          <Route
-            path='/signup'
-            element={auth ? <Navigate to='/' /> : <SignupPage />}
-          />
-          <Route
-            path='/login'
-            element={auth ? <Navigate to='/' /> : <LoginPage />}
-          />
+          <Route path='/signup' element={auth ? <Navigate to='/' /> : <SignupPage />} />
+          <Route path='/login' element={auth ? <Navigate to='/' /> : <LoginPage />} />
           <Route path='/explore' element={<ExplorePage />} />
+          <Route path='/settings' element={<SettingsPage />} />
           <Route
             path='/profile/:username'
             element={
