@@ -1,0 +1,22 @@
+.option__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  padding: 0 5%;
+
+  .option__text {
+    color: #b6b7bd;
+    font-size: 16px;
+  }
+
+  .option__arrow {
+    color: #b6b7bd;
+    font-size: 16px;
+  }
+}
+.option__container:hover {
+  background-color: #24203f;
+}
