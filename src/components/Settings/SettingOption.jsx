@@ -11,7 +11,7 @@ import { BsChevronRight } from 'react-icons/bs';
  */
 import Styles from './settingOption.module.scss';
 
-export const SettingOption = ({ optionTitle, optionText, navigateLink }) => {
+export const SettingOption = ({ optionTitle, optionText, navigateLink, arrow = 'block' }) => {
   const navigate = useNavigate();
 
   const settingNavigate = () => navigate(navigateLink);
@@ -22,7 +22,7 @@ export const SettingOption = ({ optionTitle, optionText, navigateLink }) => {
         <span className={Styles.option__title}>{optionTitle}</span>
         <span className={Styles.option__text}>{optionText}</span>
       </div>
-      <div className={Styles.arrow__container}>
+      <div style={{ display: arrow }} className={Styles.arrow__container}>
         <BsChevronRight className={Styles.option__arrow} />
       </div>
     </div>
@@ -32,5 +32,6 @@ export const SettingOption = ({ optionTitle, optionText, navigateLink }) => {
 SettingOption.propTypes = {
   optionTitle: PropTypes.string.isRequired,
   optionText: PropTypes.string,
-  navigateLink: PropTypes.string.isRequired,
+  navigateLink: PropTypes.string,
+  arrow: PropTypes.string,
 };
