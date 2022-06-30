@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 /**
  * @components
  */
@@ -12,7 +14,7 @@ import { AuthContext } from '../../context/AuthContext/AuthContext';
  */
 import Styles from './navTopSettings.module.scss';
 
-export const NavTopSettings = () => {
+export const NavTopSettings = ({ navText }) => {
   const { username } = useContext(AuthContext);
 
   return (
@@ -20,9 +22,13 @@ export const NavTopSettings = () => {
       <Container>
         <div className={Styles.nav__container}>
           <Back />
-          <NavText textBig='Configuración' textSmall={username} />
+          <NavText textBig={navText} textSmall={username} />
         </div>
       </Container>
     </div>
   );
+};
+
+NavTopSettings.propTypes = {
+  navText: PropTypes.string,
 };
