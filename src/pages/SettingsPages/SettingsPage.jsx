@@ -17,7 +17,6 @@ export const SettingsPage = () => {
       <Nav />
       <Main>
         <SettingOption optionTitle="Tu cuenta" navigateLink="/settings/account" />
-        <SettingOption optionTitle="Privacidad y seguridad" navigateLink="/settings/privacy" />
       </Main>
     </>
   );
