@@ -1,0 +1,46 @@
+.option__container {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  min-height: 50px;
+  padding: 15px 5%;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+
+  .icon__container {
+    margin: 0 10px;
+    max-width: 10%;
+
+    .icon {
+      color: #b6b7bd;
+      font-size: 20px;
+    }
+  }
+
+  .option__text_container {
+    display: flex;
+    flex-direction: column;
+
+    .option__title {
+      color: #ebebec;
+      font-size: 15px;
+    }
+
+    .option__text {
+      color: #b6b7bd;
+      font-size: 13px;
+    }
+  }
+
+  .arrow__container {
+    color: #b6b7bd;
+    margin-left: auto;
+
+    option__arrow {
+      font-size: 16px;
+    }
+  }
+}
+.option__container:hover {
+  background-color: #24203f;
+}
