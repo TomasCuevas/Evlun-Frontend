@@ -11,20 +11,26 @@ import { BsChevronRight } from 'react-icons/bs';
  */
 import Styles from './settingOption.module.scss';
 
-export const SettingOption = ({ optionText, navigateLink }) => {
+export const SettingOption = ({ optionTitle, optionText, navigateLink }) => {
   const navigate = useNavigate();
 
   const settingNavigate = () => navigate(navigateLink);
 
   return (
     <div onClick={settingNavigate} className={Styles.option__container}>
-      <span className={Styles.option__text}>{optionText}</span>
-      <BsChevronRight className={Styles.option__arrow} />
+      <div className={Styles.option__text_container}>
+        <span className={Styles.option__title}>{optionTitle}</span>
+        <span className={Styles.option__text}>{optionText}</span>
+      </div>
+      <div className={Styles.arrow__container}>
+        <BsChevronRight className={Styles.option__arrow} />
+      </div>
     </div>
   );
 };
 
 SettingOption.propTypes = {
-  optionText: PropTypes.string.isRequired,
+  optionTitle: PropTypes.string.isRequired,
+  optionText: PropTypes.string,
   navigateLink: PropTypes.string.isRequired,
 };
