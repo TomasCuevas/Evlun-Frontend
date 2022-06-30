@@ -1,5 +1,3 @@
-import { useEffect, useContext } from 'react';
-
 /**
  * @components
  */
@@ -18,27 +16,7 @@ import { FeedPost } from '../../layouts/FeedPosts/FeedPosts';
  */
 import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
-/**
- * @fixtureData
- */
-import { user } from '../../fixtures/user';
-
 export const MainPage = () => {
-  const { login } = useContext(AuthContext);
-
-  useEffect(() => {
-    const onLogin = async () => {
-      login('abc123', user);
-    };
-
-    onLogin();
-  }, []);
-
   return (
     <NavSwitchProvider>
       <NavTopHome />
