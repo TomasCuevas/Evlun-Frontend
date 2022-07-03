@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -11,16 +11,20 @@ export const FormInputPrimary = ({
   inputName,
   inputValue,
   inputChange,
-  inputType,
+  inputType = 'text',
   label,
   icon: Icon = undefined,
 }) => {
   const labelRef = useRef();
 
-  const inputFocus = () => labelRef.current.classList.add(`label__focus`);
+  const inputFocus = () => labelRef.current.classList.add('label__focus');
 
   const inputBlur = () =>
-    inputValue.length <= 0 && labelRef.current.classList.remove(`label__focus`);
+    inputValue.length <= 0 && labelRef.current.classList.remove('label__focus');
+
+  useEffect(() => {
+    if (inputValue.length > 0) labelRef.current.classList.add('label__focus');
+  }, []);
 
   return (
     <div className={styles.input__container}>
@@ -50,7 +54,7 @@ FormInputPrimary.propTypes = {
   inputName: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
   inputChange: PropTypes.func.isRequired,
-  inputType: PropTypes.string.isRequired,
+  inputType: PropTypes.string,
   label: PropTypes.string.isRequired,
   icon: PropTypes.element,
 };
