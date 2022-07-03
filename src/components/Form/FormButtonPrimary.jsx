@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
  */
 import styles from './formButtonPrimary.module.scss';
 
-export const FormButtonPrimary = ({ buttonText, buttonSubmit }) => {
+export const FormButtonPrimary = ({ buttonText, buttonSubmit, option }) => {
   return (
-    <button onClick={buttonSubmit} className={styles.button}>
+    <button disabled={option} onClick={buttonSubmit} className={styles.button}>
       {buttonText}
     </button>
   );
@@ -16,4 +16,5 @@ export const FormButtonPrimary = ({ buttonText, buttonSubmit }) => {
 FormButtonPrimary.propTypes = {
   buttonText: PropTypes.string.isRequired,
   buttonSubmit: PropTypes.func.isRequired,
+  option: PropTypes.bool,
 };
