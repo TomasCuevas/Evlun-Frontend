@@ -7,12 +7,25 @@ export const useForm = (initialState = {}) => {
     setFormValues(initialState);
   };
 
-  const handleInputChange = ({ target }) => {
+  const onInputChange = ({ target }) => {
     setFormValues({
       ...formValues,
       [target.name]: target.value,
     });
   };
 
-  return [formValues, handleInputChange, reset];
+  const checkOneOnly = ({ target }) => {
+    const toggle = !formValues[target.name];
+    setFormValues({
+      [target.name]: toggle,
+    });
+  };
+
+  return {
+    ...formValues,
+    formValues,
+    onInputChange,
+    reset,
+    checkOneOnly,
+  };
 };
