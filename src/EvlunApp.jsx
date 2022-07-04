@@ -18,17 +18,14 @@ import { ExplorePage } from './pages/ExplorePage/ExplorePage';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { MainPage } from './pages/MainPage/MainPage';
 import { ProfilePage } from './pages/ProfilePage/ProfilePage';
-import { SettingsAccountPage } from './pages/SettingsPages/SettingsAccountPage';
-import { SettingsChangeYourPasswordPage } from './pages/SettingsPages/SettingsChangeYourPasswordPage';
-import { SettingsDeactivatePage } from './pages/SettingsPages/SettingsDeactivatePage';
 import { SettingsPage } from './pages/SettingsPages/SettingsPage';
-import { SettingsYourDataPage } from './pages/SettingsPages/SettingsYourDataPage';
 import { SignupPage } from './pages/SignupPage/SignupPage';
 
 /**
  * @fixtureData
  */
 import { user } from './fixtures/user';
+import { SettingsRoutes } from './router/SettingsRoutes';
 
 export const EvlunApp = () => {
   const { auth, loading } = useContext(AuthContext);
@@ -52,18 +49,8 @@ export const EvlunApp = () => {
           <Route path="/login" element={auth ? <Navigate to="/" /> : <LoginPage />} />
           <Route path="/explore" element={<ExplorePage />} />
 
-          <Route path="/settings">
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/settings/account">
-              <Route path="/settings/account" element={<SettingsAccountPage />} />
-              <Route path="/settings/account/your_evlun_data" element={<SettingsYourDataPage />} />
-              <Route
-                path="/settings/account/password"
-                element={<SettingsChangeYourPasswordPage />}
-              />
-              <Route path="/settings/account/deactivate" element={<SettingsDeactivatePage />} />
-            </Route>
-          </Route>
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/settings/*" element={<SettingsRoutes />} />
 
           <Route
             path="/profile/:username"
