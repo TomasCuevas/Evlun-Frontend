@@ -8,12 +8,7 @@ import { useForm } from '../../hooks/useForm';
  */
 import { Main } from '../../components/Main/Main';
 import { Container } from '../../components/Container/Container';
-import {
-  Form,
-  FormInputPrimary,
-  FormButtonPrimary,
-  FormQuestion,
-} from '../../components/Form';
+import { Form, FormInputPrimary, FormButtonPrimary, FormQuestion } from '../../components/Form';
 
 /**
  * @styles
@@ -21,7 +16,7 @@ import {
 import styles from './loginPage.module.scss';
 
 export const LoginPage = () => {
-  const [{ email, password }, handleInputChange] = useForm({
+  const { email, password, handleInputChange } = useForm({
     email: '',
     password: '',
   });
@@ -37,32 +32,25 @@ export const LoginPage = () => {
           Iniciar sesión en <span>Evlun</span>
         </p>
 
-        <Form autocomplete='off' formSubmit={onSubmit}>
+        <Form formSubmit={onSubmit}>
           <FormInputPrimary
-            inputName='email'
-            label='Correo electronico'
+            inputName="email"
+            label="Correo electronico"
             inputValue={email}
             inputChange={handleInputChange}
-            inputType='email'
+            inputType="email"
           />
           <FormInputPrimary
-            inputName='password'
-            label='Contraseña'
+            inputName="password"
+            label="Contraseña"
             inputValue={password}
             inputChange={handleInputChange}
-            inputType='password'
+            inputType="password"
           />
-          <FormButtonPrimary
-            buttonText='Iniciar Sesión'
-            buttonSubmit={onSubmit}
-          />
+          <FormButtonPrimary buttonText="Iniciar Sesión" buttonSubmit={onSubmit} />
         </Form>
 
-        <FormQuestion
-          question='¿No tienes una cuenta?'
-          linkQuestion='Regístrate'
-          link='/signup'
-        />
+        <FormQuestion question="¿No tienes una cuenta?" linkQuestion="Regístrate" link="/signup" />
       </Container>
     </Main>
   );
