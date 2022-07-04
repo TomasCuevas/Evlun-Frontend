@@ -1,0 +1,13 @@
+.checkbox__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3c3d4f;
+
+  .label {
+    font-size: 1rem;
+    color: #ebebec;
+  }
+}
