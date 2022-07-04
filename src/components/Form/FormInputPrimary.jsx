@@ -23,7 +23,7 @@ export const FormInputPrimary = ({
     inputValue.length <= 0 && labelRef.current.classList.remove('label__focus');
 
   useEffect(() => {
-    if (inputValue.length > 0) labelRef.current.classList.add('label__focus');
+    if (inputValue.length > 0 || inputValue > 0) labelRef.current.classList.add('label__focus');
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export const FormInputPrimary = ({
 
 FormInputPrimary.propTypes = {
   inputName: PropTypes.string.isRequired,
-  inputValue: PropTypes.string.isRequired,
+  inputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   inputChange: PropTypes.func.isRequired,
   inputType: PropTypes.string,
   label: PropTypes.string.isRequired,
