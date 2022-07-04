@@ -25,19 +25,19 @@ export const SettingsAccountPage = () => {
           icon={BsPerson}
           optionTitle="Información de la cuenta"
           optionText="Ve la información de tu cuenta, como el número de teléfono y la dirección de correo electrónico."
-          navigateLink="/settings/account/your_evlun_data"
+          navigateLink="/settings/your_evlun_data"
         />
         <SettingOptionFull
           icon={BsKey}
           optionTitle="Cambia tu contraseña"
           optionText="Cambia tu contraseña en cualquier momento."
-          navigateLink="/settings/account/password"
+          navigateLink="/settings/password"
         />
         <SettingOptionFull
           icon={BsEmojiFrown}
           optionTitle="Desactiva tu cuenta"
           optionText="Averigua cómo puedes desactivar tu cuenta.."
-          navigateLink="/settings/account/deactivate"
+          navigateLink="/settings/deactivate"
         />
       </Main>
     </>
