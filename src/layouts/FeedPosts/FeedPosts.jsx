@@ -1,9 +1,4 @@
 /**
- * @components
- */
-import { Container } from '../../components/Container/Container';
-
-/**
  * @layout
  */
 import { Post } from '../Post/Post';
@@ -23,13 +18,11 @@ export const FeedPost = () => {
 
   return (
     <section className={styles.feedposts__container}>
-      <Container>
-        <div className={styles.allposts__container}>
-          {allPosts.map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
-        </div>
-      </Container>
+      <div className={styles.allposts__container}>
+        {allPosts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </div>
     </section>
   );
 };
