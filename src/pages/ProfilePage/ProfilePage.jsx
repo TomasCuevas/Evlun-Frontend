@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
  * @components
  */
 import { Main } from '../../components/Main/Main';
+import { Container } from '../../components/Container/Container';
 
 /**
  * @layouts
@@ -38,7 +39,9 @@ export const ProfilePage = () => {
       <NavTopProfile />
       <Main>
         <ProfileHero />
-        <FeedPost />
+        <Container>
+          <FeedPost />
+        </Container>
       </Main>
     </NavSwitchProvider>
   );
