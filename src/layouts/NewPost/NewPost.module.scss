@@ -5,20 +5,25 @@
   border-bottom: 1px solid #b6b7bd;
   padding-bottom: 10px;
 
-  .input__section {
-    width: 100%;
+  .top__section {
+    display: flex;
+    gap: 10px;
 
-    .input {
+    .input__section {
       width: 100%;
-      padding: 10px 0;
-      background: none;
-      color: #ebebec;
-      font-size: 19px;
-      outline: none;
-      border: none;
-      resize: none;
-      overflow: hidden;
-      border-bottom: 1px solid #0000;
+
+      .input {
+        width: 100%;
+        padding: 10px 0;
+        background: none;
+        color: #ebebec;
+        font-size: 19px;
+        outline: none;
+        border: none;
+        resize: none;
+        overflow: hidden;
+        border-bottom: 1px solid #0000;
+      }
     }
   }
 
@@ -28,7 +33,7 @@
       justify-content: flex-end;
       align-items: center;
       width: 100%;
-      min-height: 50px;
+      min-height: 30px;
 
       .button {
         border: none;
