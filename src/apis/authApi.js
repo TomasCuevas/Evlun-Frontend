@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { getEnvVariables } from '../helpers/getEnvVariables';
 
-const { API_AUTH_URL } = getEnvVariables();
+const { VITE_API_AUTH_URL } = getEnvVariables();
 
 const authApi = axios.create({
-  baseURL: API_AUTH_URL,
+  baseURL: VITE_API_AUTH_URL,
 });
 
 authApi.interceptors.request.use((config) => {
@@ -12,6 +12,8 @@ authApi.interceptors.request.use((config) => {
     ...config.headers,
     'x-token': localStorage.getItem('token'),
   };
+
+  return config;
 });
 
 export default authApi;
