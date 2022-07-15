@@ -1,5 +1,5 @@
 export const getEnvVariables = () => {
   return {
-    API_AUTH_URL: import.meta.API_AUTH_URL,
+    VITE_API_AUTH_URL: import.meta.env.VITE_API_AUTH_URL,
   };
 };
