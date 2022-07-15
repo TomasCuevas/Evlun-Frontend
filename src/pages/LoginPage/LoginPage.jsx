@@ -2,6 +2,7 @@
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @components
@@ -16,13 +17,16 @@ import { Form, FormInputPrimary, FormButtonPrimary, FormQuestion } from '../../c
 import styles from './loginPage.module.scss';
 
 export const LoginPage = () => {
-  const { email, password, handleInputChange } = useForm({
+  const { startLogin } = useAuthStore();
+  const { email, password, onInputChange } = useForm({
     email: '',
     password: '',
   });
 
   const onSubmit = (event) => {
     event.preventDefault();
+
+    startLogin(email, password);
   };
 
   return (
@@ -37,20 +41,24 @@ export const LoginPage = () => {
             inputName="email"
             label="Correo electronico"
             inputValue={email}
-            inputChange={handleInputChange}
+            inputChange={onInputChange}
             inputType="email"
           />
           <FormInputPrimary
             inputName="password"
             label="Contraseña"
             inputValue={password}
-            inputChange={handleInputChange}
+            inputChange={onInputChange}
             inputType="password"
           />
           <FormButtonPrimary buttonText="Iniciar Sesión" buttonSubmit={onSubmit} />
         </Form>
 
-        <FormQuestion question="¿No tienes una cuenta?" linkQuestion="Regístrate" link="/signup" />
+        <FormQuestion
+          question="¿No tienes una cuenta?"
+          linkQuestion="Regístrate"
+          link="/auth/signup"
+        />
       </Container>
     </Main>
   );
