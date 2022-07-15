@@ -1,18 +1,13 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
  */
 import styles from './navSwitchProfile.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const NavSwitchProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthStore();
   const navigate = useNavigate();
 
   const { avatar, name, username, followings, followers } = user;
@@ -22,7 +17,7 @@ export const NavSwitchProfile = () => {
   return (
     <section className={styles.profile} onClick={onNavigate}>
       <div className={styles.profile__top}>
-        <img src={avatar} alt='profile-img' className={styles.profile__img} />
+        <img src={avatar} alt="profile-img" className={styles.profile__img} />
       </div>
 
       <div className={styles.profile__medium}>

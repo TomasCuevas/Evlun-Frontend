@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import moment from 'moment';
 
 /**
@@ -7,18 +6,18 @@ import moment from 'moment';
 import { BsCalendar3, BsPinMap } from 'react-icons/bs';
 
 /**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
+
+/**
  * @styles
  */
 import Styles from './locationMoment.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const LocationMoment = () => {
-  const { location, date } = useContext(AuthContext);
-  const dateTransform = moment(date).format('MMMM Do YYYY');
+  const { location } = useAuthStore();
+  const dateTransform = moment(new Date().getTime()).format('MMMM Do YYYY');
 
   return (
     <div className={Styles.moment__container}>

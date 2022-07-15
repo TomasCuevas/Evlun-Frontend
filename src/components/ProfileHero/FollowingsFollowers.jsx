@@ -1,17 +1,15 @@
-import { useContext } from 'react';
+/**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
  */
 import Styles from './followingsFollowers.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const FollowingsFollowers = () => {
-  const { followings, followers } = useContext(AuthContext);
+  const { followings, followers } = useAuthStore();
 
   return (
     <div className={Styles.followings__followers_container}>

@@ -41,6 +41,7 @@ export const FormInputPrimary = ({
         onBlur={inputBlur}
         type={inputType}
         name={inputName}
+        autoComplete="off"
         id={inputName}
         value={inputValue}
         onChange={inputChange}
