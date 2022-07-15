@@ -14,9 +14,13 @@ export const useAuthStore = () => {
       if (!token) return dispatch(onLogout());
 
       const { data } = await authApi.get('/refresh');
-      console.log(data);
+
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('token-init-date', new Date().getTime());
+
+      dispatch(onLogin(data.user));
     } catch (error) {
-      console.log(error);
+      console.error(error);
       localStorage.clear();
       dispatch(onLogout());
     }
@@ -29,11 +33,11 @@ export const useAuthStore = () => {
       const { data } = await authApi.post('/login', { email, password });
 
       localStorage.setItem('token', data.token);
-      localStorage.setItem('token-init-date', new Date().getTime);
+      localStorage.setItem('token-init-date', new Date().getTime());
 
       dispatch(onLogin(data.user));
     } catch (error) {
-      console.log(error);
+      console.error(error);
       localStorage.clear();
       dispatch(onLogout());
     }
@@ -46,11 +50,11 @@ export const useAuthStore = () => {
       const { data } = await authApi.post('/signup', { name, username, email, password });
 
       localStorage.setItem('token', data.token);
-      localStorage.setItem('token-init-date', new Date().getTime);
+      localStorage.setItem('token-init-date', new Date().getTime());
 
       dispatch(onLogin(data.user));
     } catch (error) {
-      console.log(error);
+      console.error(error);
       localStorage.clear();
       dispatch(onLogout());
     }
@@ -61,6 +65,7 @@ export const useAuthStore = () => {
     errorMessage,
     status,
     user,
+    ...user,
 
     // methods
     startChecking,
