@@ -2,6 +2,7 @@
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @components
@@ -19,6 +20,7 @@ import { FormQuestion } from '../../components/Form/FormQuestion';
 import styles from './signupPage.module.scss';
 
 export const SignupPage = () => {
+  const { startSignup } = useAuthStore();
   const { name, username, email, password, onInputChange } = useForm({
     name: '',
     username: '',
@@ -28,6 +30,8 @@ export const SignupPage = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+
+    startSignup(name, username, email, password);
   };
 
   return (
