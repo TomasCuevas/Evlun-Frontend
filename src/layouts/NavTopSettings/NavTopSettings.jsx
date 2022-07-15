@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 /**
  * @components
  */
-import { useContext } from 'react';
 import { Container } from '../../components/Container/Container';
 import { Back } from '../../components/NavTop/Back';
 import { NavText } from '../../components/NavTop/NavText';
-import { AuthContext } from '../../context/AuthContext/AuthContext';
+
+/**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
@@ -15,7 +18,7 @@ import { AuthContext } from '../../context/AuthContext/AuthContext';
 import Styles from './navTopSettings.module.scss';
 
 export const NavTopSettings = ({ navText }) => {
-  const { username } = useContext(AuthContext);
+  const { username } = useAuthStore();
 
   return (
     <div className={Styles.container__all}>

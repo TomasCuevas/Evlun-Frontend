@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-
 /**
  * @components
  */
@@ -8,18 +6,17 @@ import { Explore } from '../../components/NavTop/Explore';
 import { Avatar } from '../../components/NavTop/Avatar';
 
 /**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
+
+/**
  * @styles
  */
 import styles from './navTopExplore.module.scss';
 
-/**
- * context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const NavTopExplore = () => {
-  const { user } = useContext(AuthContext);
-  const { avatar } = user;
+  const { avatar } = useAuthStore();
 
   return (
     <div className={styles.container__all}>

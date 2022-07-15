@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-
 /**
  * @components
  */
@@ -8,17 +6,17 @@ import { Back } from '../../components/NavTop/Back';
 import { NavText } from '../../components/NavTop/NavText';
 
 /**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
+
+/**
  * @styles
  */
 import Styles from './navTopProfile.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const NavTopProfile = () => {
-  const { name, username } = useContext(AuthContext);
+  const { name, username } = useAuthStore();
 
   return (
     <div className={Styles.container__all}>

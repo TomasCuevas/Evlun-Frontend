@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /**
@@ -7,42 +6,35 @@ import { NavLink } from 'react-router-dom';
 import { BsHouseDoorFill, BsSearch, BsFillPersonFill } from 'react-icons/bs';
 
 /**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
+
+/**
  * @styles
  */
 import styles from './nav.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const Nav = () => {
-  const { user } = useContext(AuthContext);
-  const { username } = user;
+  const { username } = useAuthStore();
 
   return (
     <nav className={styles.nav__container}>
       <NavLink
-        to='/'
-        className={({ isActive }) =>
-          isActive ? styles.nav__item_active : styles.nav__item
-        }
+        to="/"
+        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
       >
         <BsHouseDoorFill className={styles.nav__icon} />
       </NavLink>
       <NavLink
-        to='/explore'
-        className={({ isActive }) =>
-          isActive ? styles.nav__item_active : styles.nav__item
-        }
+        to="/explore"
+        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
       >
         <BsSearch className={styles.nav__icon} />
       </NavLink>
       <NavLink
         to={`/profile/${username}`}
-        className={({ isActive }) =>
-          isActive ? styles.nav__item_active : styles.nav__item
-        }
+        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
       >
         <BsFillPersonFill className={styles.nav__icon} />
       </NavLink>

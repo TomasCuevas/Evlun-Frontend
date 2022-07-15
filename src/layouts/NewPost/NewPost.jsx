@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 /**
  * @components
@@ -9,19 +9,15 @@ import { PostAvatarSection } from '../../components/Post/PostAvatarSection';
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
  */
 import Styles from './NewPost.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const NewPost = () => {
-  const { avatar, name } = useContext(AuthContext);
+  const { avatar, name } = useAuthStore();
   const [height, setHeight] = useState(40);
   const { post, onInputChange } = useForm({
     post: '',

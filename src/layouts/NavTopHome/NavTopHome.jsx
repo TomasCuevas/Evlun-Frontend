@@ -1,23 +1,17 @@
-import { useContext } from 'react';
-
 /**
  * @components
  */
 import { Container } from '../../components/Container/Container';
 import { Avatar } from '../../components/NavTop/Avatar';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
  */
 import styles from './navTopHome.module.scss';
 
-/**
- * context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const NavTopHome = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthStore();
 
   const { avatar } = user;
 
