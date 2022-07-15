@@ -1,14 +1,16 @@
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import { AuthProvider } from './context/AuthContext/AuthContext';
+import { store } from './store/store';
+
 import { EvlunApp } from './EvlunApp';
 import './main.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <AuthProvider>
+    <Provider store={store}>
       <EvlunApp />
-    </AuthProvider>
+    </Provider>
   </BrowserRouter>,
 );
