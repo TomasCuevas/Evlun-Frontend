@@ -19,7 +19,7 @@ import { FormQuestion } from '../../components/Form/FormQuestion';
 import styles from './signupPage.module.scss';
 
 export const SignupPage = () => {
-  const [{ name, username, email, password }, handleInputChange] = useForm({
+  const { name, username, email, password, onInputChange } = useForm({
     name: '',
     username: '',
     email: '',
@@ -37,39 +37,43 @@ export const SignupPage = () => {
           Únete a <span>Evlun</span> hoy mismo
         </p>
 
-        <Form autocomplete='off' formSubmit={onSubmit}>
+        <Form autocomplete="off" formSubmit={onSubmit}>
           <FormInputPrimary
-            inputName='name'
-            label='Nombre completo'
+            inputName="name"
+            label="Nombre completo"
             inputValue={name}
-            inputChange={handleInputChange}
-            inputType='text'
+            inputChange={onInputChange}
+            inputType="text"
           />
           <FormInputPrimary
-            inputName='username'
-            label='Nombre de usuario'
+            inputName="username"
+            label="Nombre de usuario"
             inputValue={username}
-            inputChange={handleInputChange}
-            inputType='text'
+            inputChange={onInputChange}
+            inputType="text"
           />
           <FormInputPrimary
-            inputName='email'
-            label='Correo electronico'
+            inputName="email"
+            label="Correo electronico"
             inputValue={email}
-            inputChange={handleInputChange}
-            inputType='email'
+            inputChange={onInputChange}
+            inputType="email"
           />
           <FormInputPrimary
-            inputName='password'
-            label='Contraseña'
+            inputName="password"
+            label="Contraseña"
             inputValue={password}
-            inputChange={handleInputChange}
-            inputType='password'
+            inputChange={onInputChange}
+            inputType="password"
           />
-          <FormButtonPrimary buttonText='Registrarme' buttonSubmit={onSubmit} />
+          <FormButtonPrimary buttonText="Registrarme" buttonSubmit={onSubmit} />
         </Form>
 
-        <FormQuestion question='¿Ya tienes una cuenta?' linkQuestion='Iniciar sesión' link='/' />
+        <FormQuestion
+          question="¿Ya tienes una cuenta?"
+          linkQuestion="Iniciar sesión"
+          link="/auth/login"
+        />
       </Container>
     </Main>
   );
