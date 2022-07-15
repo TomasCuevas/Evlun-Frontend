@@ -43,7 +43,7 @@ export const useAuthStore = () => {
     }
   };
 
-  const startRegister = async (name, username, email, password) => {
+  const startSignup = async (name, username, email, password) => {
     try {
       dispatch(onCheckingCredentials());
 
@@ -70,6 +70,6 @@ export const useAuthStore = () => {
     // methods
     startChecking,
     startLogin,
-    startRegister,
+    startSignup,
   };
 };
