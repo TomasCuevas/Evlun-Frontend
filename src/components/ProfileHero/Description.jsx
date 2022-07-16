@@ -1,17 +1,15 @@
-import { useContext } from 'react';
+/**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
  */
 import Styles from './description.module.scss';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const Description = () => {
-  const { description } = useContext(AuthContext);
+  const { description } = useAuthStore();
 
   return (
     <div className={Styles.description__container}>
