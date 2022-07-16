@@ -1,6 +1,11 @@
 import moment from 'moment';
 
 /**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
+
+/**
  * @components
  */
 import { NavTopSettings } from '../../layouts/NavTopSettings/NavTopSettings';
@@ -11,15 +16,9 @@ import { SettingOption } from '../../components/Settings/SettingOption';
  */
 import { Main } from '../../components/Main/Main';
 import { Nav } from '../../layouts/Nav/Nav';
-import { useContext } from 'react';
-
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 export const SettingsYourDataPage = () => {
-  const { username, phone, email, date, country, gender } = useContext(AuthContext);
+  const { username, phone, email, date, country, gender } = useAuthStore();
 
   const transformDate = moment(date).format('D/MM/YYYY H:MM:SS');
 

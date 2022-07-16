@@ -2,6 +2,7 @@
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @components
@@ -15,15 +16,13 @@ import { Main } from '../../components/Main/Main';
  */
 import { Nav } from '../../layouts/Nav/Nav';
 import { NavTopSettings } from '../../layouts/NavTopSettings/NavTopSettings';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 /**
  * @styles
  */
 
 export const SettingsUsernamePage = () => {
-  const { username } = useContext(AuthContext);
+  const { username } = useAuthStore();
   const { newUsername, onInputChange } = useForm({
     newUsername: username,
   });

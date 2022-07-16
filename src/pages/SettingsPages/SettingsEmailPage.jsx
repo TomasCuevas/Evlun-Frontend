@@ -1,4 +1,8 @@
-import { useContext } from 'react';
+/**
+ * @hooks
+ */
+import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @components
@@ -13,14 +17,8 @@ import { Main } from '../../components/Main/Main';
 import { Nav } from '../../layouts/Nav/Nav';
 import { NavTopSettings } from '../../layouts/NavTopSettings/NavTopSettings';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-import { useForm } from '../../hooks/useForm';
-
 export const SettingsEmailPage = () => {
-  const { email } = useContext(AuthContext);
+  const { email } = useAuthStore();
   const { newEmail, onInputChange } = useForm({
     newEmail: email,
   });

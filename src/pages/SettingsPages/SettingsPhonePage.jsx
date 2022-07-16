@@ -1,15 +1,15 @@
-import { useContext } from 'react';
-
 /**
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @components
  */
 import { Form, FormButtonPrimary, FormInputPrimary } from '../../components/Form';
 import { Main } from '../../components/Main/Main';
+import { Container } from '../../components/Container/Container';
 
 /**
  * layouts
@@ -17,14 +17,8 @@ import { Main } from '../../components/Main/Main';
 import { Nav } from '../../layouts/Nav/Nav';
 import { NavTopSettings } from '../../layouts/NavTopSettings/NavTopSettings';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-import { Container } from '../../components/Container/Container';
-
 export const SettingsPhonePage = () => {
-  const { phone } = useContext(AuthContext);
+  const { phone } = useAuthStore();
   const { newPhone, onInputChange } = useForm({
     newPhone: phone,
   });

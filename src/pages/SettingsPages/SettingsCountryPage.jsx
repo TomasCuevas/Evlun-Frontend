@@ -1,10 +1,11 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { countries } from 'countries-list';
 
 /**
  * @hooks
  */
 import { useForm } from '../../hooks/useForm';
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * components
@@ -20,13 +21,8 @@ import { Main } from '../../components/Main/Main';
 import { Nav } from '../../layouts/Nav/Nav';
 import { NavTopSettings } from '../../layouts/NavTopSettings/NavTopSettings';
 
-/**
- * @context
- */
-import { AuthContext } from '../../context/AuthContext/AuthContext';
-
 export const SettingsCountryPage = () => {
-  const { country = '' } = useContext(AuthContext);
+  const { country = '' } = useAuthStore();
   const { newCountry, onInputChange } = useForm({
     newCountry: country,
   });
