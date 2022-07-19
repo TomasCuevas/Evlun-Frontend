@@ -1,24 +1,33 @@
+import { useEffect } from 'react';
+
 /**
  * @components
  */
+import { Container } from '../../components/Container/Container';
 import { Main } from '../../components/Main/Main';
 
 /**
  * layouts
  */
-import { FeedPost } from '../../layouts/FeedPosts/FeedPosts';
-import { Nav } from '../../layouts/Nav/Nav';
-import { NavSwitch } from '../../layouts/NavSwitch/NavSwitch';
-import { NavTopHome } from '../../layouts/NavTopHome/NavTopHome';
-import { NewPost } from '../../layouts/NewPost/NewPost';
+import { FeedPostsHome, Nav, NavSwitch, NavTopHome, NewPost } from '../../layouts';
 
 /**
  * @provider
  */
 import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
-import { Container } from '../../components/Container/Container';
+
+/**
+ * @hooks
+ */
+import { usePostsStore } from '../../hooks/usePostsStore';
 
 export const MainPage = () => {
+  const { startLoading } = usePostsStore();
+
+  useEffect(() => {
+    startLoading();
+  }, []);
+
   return (
     <NavSwitchProvider>
       <NavTopHome />
@@ -27,7 +36,7 @@ export const MainPage = () => {
       <Main>
         <Container mt={30}>
           <NewPost />
-          <FeedPost />
+          <FeedPostsHome />
         </Container>
       </Main>
     </NavSwitchProvider>
