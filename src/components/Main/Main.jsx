@@ -1,8 +1,8 @@
 /**
  * @styles
  */
-import styles from './main.module.scss';
+import Styles from './main.module.scss';
 
 export const Main = ({ children }) => {
-  return <main className={styles.main__container}>{children}</main>;
+  return <main className={Styles.main__container}>{children}</main>;
 };
