@@ -11,7 +11,6 @@ import Styles from './banner.module.scss';
 export const Banner = () => {
   const { banner } = useProfileStore();
 
-  console.log(banner);
   return (
     <div className={Styles.banner__container}>
       {banner ? (

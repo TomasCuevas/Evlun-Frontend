@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 /**
@@ -10,10 +10,7 @@ import { Container } from '../../components/Container/Container';
 /**
  * @layouts
  */
-import { FeedPost } from '../../layouts/FeedPosts/FeedPosts';
-import { Nav } from '../../layouts/Nav/Nav';
-import { NavTopProfile } from '../../layouts/NavTopProfile/NavTopProfile';
-import { ProfileHero } from '../../layouts/ProfileHero/ProfileHero';
+import { FeedPostsProfile, Nav, NavTopProfile, ProfileHero } from '../../layouts';
 
 /**
  * @provider
@@ -21,16 +18,16 @@ import { ProfileHero } from '../../layouts/ProfileHero/ProfileHero';
 import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
 
 /**
- * @context
+ * @hooks
  */
-import { ProfileContext } from '../../context/ProfileContext/ProfileContext';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 export const ProfilePage = () => {
-  const { onChangeUsername } = useContext(ProfileContext);
+  const { startLoading } = useProfileStore();
   const { username } = useParams();
 
   useEffect(() => {
-    onChangeUsername(username);
+    startLoading(username);
   }, [username]);
 
   return (
@@ -40,7 +37,7 @@ export const ProfilePage = () => {
       <Main>
         <ProfileHero />
         <Container>
-          <FeedPost />
+          <FeedPostsProfile />
         </Container>
       </Main>
     </NavSwitchProvider>
