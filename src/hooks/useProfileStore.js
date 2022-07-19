@@ -17,10 +17,10 @@ export const useProfileStore = () => {
       const newLt = new Date().getTime();
       dispatch(onLoading(newLt));
 
-      const { data: userData } = await userApi(`?username=${username}`);
+      const { data: userData } = await userApi.get(`?username=${username}`);
       dispatch(onSetUser(userData.user));
 
-      const { data: postData } = await postApi(`?id=${userData.user._id}&lt=${newLt}`);
+      const { data: postData } = await postApi.get(`?id=${userData.user._id}&lt=${newLt}`);
       dispatch(onSetPosts(postData.posts));
     } catch (error) {
       console.log(error);
