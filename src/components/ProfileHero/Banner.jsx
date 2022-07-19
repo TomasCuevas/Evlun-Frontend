@@ -1,7 +1,7 @@
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 /**
  * @styles
@@ -9,11 +9,16 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './banner.module.scss';
 
 export const Banner = () => {
-  const { banner } = useAuthStore();
+  const { banner } = useProfileStore();
 
+  console.log(banner);
   return (
     <div className={Styles.banner__container}>
-      <img src={banner} alt="banner img" className={Styles.banner} />
+      {banner ? (
+        <img src={banner} alt="banner img" className={Styles.banner} />
+      ) : (
+        <div>className=${Styles.banner}</div>
+      )}
     </div>
   );
 };

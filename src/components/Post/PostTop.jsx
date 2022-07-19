@@ -21,7 +21,7 @@ export const PostTop = ({ name, username, date }) => {
           <span className={styles.post__name}>{name}</span>
         </div>
         <div className={styles.post__top_username}>
-          <span className={styles.post__username}>{username}</span>
+          <span className={styles.post__username}>{`@${username}`}</span>
         </div>
         <div className={styles.post__top_decorate}>
           <span className={styles.post__decorate}>·</span>

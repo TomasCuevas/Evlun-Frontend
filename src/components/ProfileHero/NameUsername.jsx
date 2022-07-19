@@ -1,7 +1,7 @@
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 /**
  * @styles
@@ -9,12 +9,12 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './nameUsername.module.scss';
 
 export const NameUsername = () => {
-  const { name, username } = useAuthStore();
+  const { name, username } = useProfileStore();
 
   return (
     <div className={Styles.info__user_container}>
       <span className={Styles.name}>{name}</span>
-      <span className={Styles.username}>{username}</span>
+      <span className={Styles.username}>{`@${username}`}</span>
     </div>
   );
 };

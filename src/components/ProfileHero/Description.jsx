@@ -1,7 +1,7 @@
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 /**
  * @styles
@@ -9,7 +9,7 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './description.module.scss';
 
 export const Description = () => {
-  const { description } = useAuthStore();
+  const { description } = useProfileStore();
 
   return (
     <div className={Styles.description__container}>

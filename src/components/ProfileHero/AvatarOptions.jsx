@@ -6,7 +6,7 @@ import { Option } from './Option';
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 /**
  * @styles
@@ -14,7 +14,7 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './avatarOptions.module.scss';
 
 export const AvatarOptions = () => {
-  const { avatar } = useAuthStore();
+  const { avatar } = useProfileStore();
 
   return (
     <div className={Styles.info_top__container}>

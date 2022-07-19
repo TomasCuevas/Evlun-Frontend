@@ -1,7 +1,9 @@
 .followings__followers_container {
   display: flex;
   margin: 15px 0;
+  padding-bottom: 15px;
   gap: 10px;
+  border-bottom: 1px solid #ebebec;
 
   .info__container {
     display: flex;
