@@ -9,18 +9,18 @@ import { Post } from '../';
 import Styles from './FeedPostsHome.module.scss';
 
 /**
- * @fixtureData
+ * @hooks
  */
-import { posts } from '../../fixtures/posts';
+import { usePostsStore } from '../../hooks/usePostsStore';
 
 export const FeedPostsHome = () => {
-  const allPosts = posts;
+  const { posts } = usePostsStore();
 
   return (
     <section className={Styles.feedposts__container}>
       <div className={Styles.allposts__container}>
-        {allPosts.map((post) => (
-          <Post key={post.id} post={post} />
+        {posts.map((post) => (
+          <Post key={post._id} post={post} />
         ))}
       </div>
     </section>
