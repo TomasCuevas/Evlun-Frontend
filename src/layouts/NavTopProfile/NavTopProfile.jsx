@@ -8,7 +8,7 @@ import { NavText } from '../../components/NavTop/NavText';
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useProfileStore } from '../../hooks/useProfileStore';
 
 /**
  * @styles
@@ -16,14 +16,14 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './navTopProfile.module.scss';
 
 export const NavTopProfile = () => {
-  const { name, username } = useAuthStore();
+  const { name, username } = useProfileStore();
 
   return (
     <div className={Styles.container__all}>
       <Container>
         <div className={Styles.nav__container}>
           <Back />
-          <NavText textBig={name} textSmall={username} />
+          <NavText name={name} username={username} />
         </div>
       </Container>
     </div>

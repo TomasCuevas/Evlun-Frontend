@@ -13,30 +13,30 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 /**
  * @styles
  */
-import styles from './nav.module.scss';
+import Styles from './nav.module.scss';
 
 export const Nav = () => {
   const { username } = useAuthStore();
 
   return (
-    <nav className={styles.nav__container}>
+    <nav className={Styles.nav__container}>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
+        className={({ isActive }) => (isActive ? Styles.nav__item_active : Styles.nav__item)}
       >
-        <BsHouseDoorFill className={styles.nav__icon} />
+        <BsHouseDoorFill className={Styles.nav__icon} />
       </NavLink>
       <NavLink
         to="/explore"
-        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
+        className={({ isActive }) => (isActive ? Styles.nav__item_active : Styles.nav__item)}
       >
-        <BsSearch className={styles.nav__icon} />
+        <BsSearch className={Styles.nav__icon} />
       </NavLink>
       <NavLink
         to={`/profile/${username}`}
-        className={({ isActive }) => (isActive ? styles.nav__item_active : styles.nav__item)}
+        className={({ isActive }) => (isActive ? Styles.nav__item_active : Styles.nav__item)}
       >
-        <BsFillPersonFill className={styles.nav__icon} />
+        <BsFillPersonFill className={Styles.nav__icon} />
       </NavLink>
     </nav>
   );
