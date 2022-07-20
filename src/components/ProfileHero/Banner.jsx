@@ -16,7 +16,7 @@ export const Banner = () => {
       {banner ? (
         <img src={banner} alt="banner img" className={Styles.banner} />
       ) : (
-        <div>className=${Styles.banner}</div>
+        <div className={Styles.banner}></div>
       )}
     </div>
   );
