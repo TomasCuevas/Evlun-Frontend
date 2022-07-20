@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /**
@@ -5,9 +6,15 @@ import PropTypes from 'prop-types';
  */
 import styles from './postAvatarSection.module.scss';
 
-export const PostAvatarSection = ({ avatar, name }) => {
+export const PostAvatarSection = ({ avatar, name, username }) => {
+  const navigate = useNavigate();
+
+  const onNavigate = () => {
+    navigate(`/profile/${username}`);
+  };
+
   return (
-    <div className={styles.avatar__section}>
+    <div onClick={onNavigate} className={styles.avatar__section}>
       <img src={avatar} alt={name} className={styles.avatar} />
     </div>
   );
@@ -16,4 +23,5 @@ export const PostAvatarSection = ({ avatar, name }) => {
 PostAvatarSection.propTypes = {
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };

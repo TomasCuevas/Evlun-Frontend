@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
@@ -12,11 +13,16 @@ import { MdMoreHoriz } from 'react-icons/md';
 import styles from './postTop.module.scss';
 
 export const PostTop = ({ name, username, date }) => {
+  const navigate = useNavigate();
   const relativeTime = moment(date).fromNow(true);
+
+  const onNavigate = () => {
+    navigate(`/profile/${username}`);
+  };
 
   return (
     <div className={styles.post__top}>
-      <div className={styles.post__top_left}>
+      <div onClick={onNavigate} className={styles.post__top_left}>
         <div className={styles.post__top_name}>
           <span className={styles.post__name}>{name}</span>
         </div>

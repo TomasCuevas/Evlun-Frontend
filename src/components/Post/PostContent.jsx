@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /**
@@ -5,14 +6,21 @@ import PropTypes from 'prop-types';
  */
 import styles from './postContent.module.scss';
 
-export const PostContent = ({ content }) => {
+export const PostContent = ({ _id, content }) => {
+  const navigate = useNavigate();
+
+  const onNavigate = () => {
+    navigate(`/post/${_id}`);
+  };
+
   return (
-    <div className={styles.post__content}>
+    <div onClick={onNavigate} className={styles.post__content}>
       <span className={styles.content}>{content}</span>
     </div>
   );
 };
 
 PostContent.propTypes = {
+  _id: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
