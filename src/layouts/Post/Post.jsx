@@ -11,23 +11,20 @@ import { PostTop } from '../../components/Post/PostTop';
 /**
  * @styles
  */
-import styles from './post.module.scss';
+import Styles from './post.module.scss';
 
 export const Post = ({ post }) => {
   return (
-    <article className={styles.post__container}>
+    <article className={Styles.post__container}>
       <PostAvatarSection
         avatar={post.added_by.avatar}
         name={post.added_by.name}
+        username={post.added_by.username}
       />
 
-      <div className={styles.post__section}>
-        <PostTop
-          name={post.added_by.name}
-          username={post.added_by.username}
-          date={post.date}
-        />
-        <PostContent content={post.content} />
+      <div className={Styles.post__section}>
+        <PostTop name={post.added_by.name} username={post.added_by.username} date={post.date} />
+        <PostContent _id={post._id} content={post.content} />
         <PostBottom />
       </div>
     </article>
