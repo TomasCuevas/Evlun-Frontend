@@ -8,6 +8,11 @@ import { Main } from '../../components/Main/Main';
 import { Container } from '../../components/Container/Container';
 
 /**
+ * @pages
+ */
+import { LoadingPage } from '../LoadingPage/LoadingPage';
+
+/**
  * @layouts
  */
 import { FeedPostsProfile, Nav, NavTopProfile, ProfileHero } from '../../layouts';
@@ -23,12 +28,14 @@ import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchConte
 import { useProfileStore } from '../../hooks/useProfileStore';
 
 export const ProfilePage = () => {
-  const { startLoading } = useProfileStore();
+  const { isLoading, startLoading } = useProfileStore();
   const { username } = useParams();
 
   useEffect(() => {
     startLoading(username);
   }, [username]);
+
+  if (isLoading) return <LoadingPage />;
 
   return (
     <NavSwitchProvider>

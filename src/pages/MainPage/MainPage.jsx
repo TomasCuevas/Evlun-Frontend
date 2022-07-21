@@ -22,10 +22,10 @@ import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchConte
 import { usePostsStore } from '../../hooks/usePostsStore';
 
 export const MainPage = () => {
-  const { startLoading } = usePostsStore();
+  const { startLoadingPosts } = usePostsStore();
 
   useEffect(() => {
-    startLoading();
+    startLoadingPosts();
   }, []);
 
   return (
