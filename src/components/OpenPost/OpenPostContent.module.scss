@@ -1,0 +1,14 @@
+.post__content_container {
+  margin-top: 20px;
+
+  .content__container {
+    width: 100%;
+    word-wrap: break-word;
+
+    .content {
+      font-size: 23px;
+      line-height: 28px;
+      color: #ebebec;
+    }
+  }
+}
