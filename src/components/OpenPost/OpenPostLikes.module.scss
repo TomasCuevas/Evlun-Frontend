@@ -1,0 +1,23 @@
+.post__likes_container {
+  padding: 15px 0;
+  width: 100%;
+  border-bottom: 1px solid #3c3d4f;
+
+  .likes__container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .likes__count {
+      color: #ebebec;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .likes__text {
+      color: #b6b7bd;
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+}
