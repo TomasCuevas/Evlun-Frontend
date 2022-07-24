@@ -12,6 +12,7 @@ import {
   SettingsPage,
   ExplorePage,
   ProfilePage,
+  PostPage,
 } from './pages';
 
 /**
@@ -39,7 +40,8 @@ export const EvlunApp = () => {
         <Routes>
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
-          <Route path="/profile/:username" element={<ProfilePage />} />
+          <Route path="/profile/:username" element={<PostPage />} />
+          <Route path="/post/:id" element={<ProfilePage />} />
           <Route path="/*" element={<Navigate to="/auth/login" />} />
         </Routes>
       )}
@@ -48,6 +50,7 @@ export const EvlunApp = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile/:username" element={<ProfilePage />} />
+          <Route path="/post/:id" element={<PostPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/settings/*" element={<SettingsRoutes />} />
