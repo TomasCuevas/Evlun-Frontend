@@ -23,7 +23,7 @@ export const NavTopProfile = () => {
       <Container>
         <div className={Styles.nav__container}>
           <Back />
-          <NavText name={name} username={username} />
+          <NavText textBig={name} textSmall={username} />
         </div>
       </Container>
     </div>

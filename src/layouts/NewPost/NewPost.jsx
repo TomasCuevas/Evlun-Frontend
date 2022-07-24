@@ -17,7 +17,7 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import Styles from './NewPost.module.scss';
 
 export const NewPost = () => {
-  const { avatar, name } = useAuthStore();
+  const { avatar, name, username } = useAuthStore();
   const [height, setHeight] = useState(40);
   const { post, onInputChange } = useForm({
     post: '',
@@ -35,7 +35,7 @@ export const NewPost = () => {
   return (
     <article className={Styles.newpost__container}>
       <section className={Styles.top__section}>
-        <PostAvatarSection avatar={avatar} name={name} />
+        <PostAvatarSection avatar={avatar} username={username} name={name} />
         <div className={Styles.input__section}>
           <textarea
             className={Styles.input}
