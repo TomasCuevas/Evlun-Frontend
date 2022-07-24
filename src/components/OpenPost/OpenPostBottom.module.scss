@@ -1,0 +1,17 @@
+.post__bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  padding: 15px 0;
+  color: #b6b7bd;
+
+  .comment__icon {
+    font-size: 25px;
+  }
+
+  .favorite__icon {
+    font-size: 25px;
+  }
+}
