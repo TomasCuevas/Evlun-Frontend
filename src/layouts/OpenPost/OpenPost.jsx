@@ -1,6 +1,7 @@
 /**
  * @components
  */
+import { useState } from 'react';
 import {
   OpenPostContent,
   OpenPostDate,
@@ -21,14 +22,19 @@ import Styles from './OpenPost.module.scss';
 
 export const OpenPost = () => {
   const { openPost } = usePostsStore();
+  const [likesCount, setLikesCount] = useState(openPost.likes?.length);
+
+  const onChangeLikesCount = (sum = true) => {
+    sum ? setLikesCount(likesCount + 1) : setLikesCount(likesCount - 1);
+  };
 
   return (
     <article className={Styles}>
       <OpenPostTop />
       <OpenPostContent />
       <OpenPostDate />
-      <OpenPostLikes />
-      <OpenPostBottom />
+      <OpenPostLikes likesCount={likesCount} />
+      <OpenPostBottom changeLikesCount={onChangeLikesCount} />
     </article>
   );
 };
