@@ -7,17 +7,11 @@
   height: 20px;
   color: #b6b7bd;
 
-  .comment__icon_container {
-    display: flex;
-    align-items: flex-start;
+  .comment__icon {
     font-size: 20px;
-    height: 100%;
   }
 
-  .favorite__icon_container {
-    display: flex;
-    align-items: flex-start;
+  .favorite__icon {
     font-size: 20px;
-    height: 100%;
   }
 }
