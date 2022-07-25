@@ -4,14 +4,19 @@
   align-items: center;
   gap: 100px;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   color: #b6b7bd;
+  border-bottom: 1px solid #3c3d4f;
 
-  .comment__icon {
-    font-size: 25px;
+  .comment__container {
+    .comment__icon {
+      font-size: 23px;
+    }
   }
 
-  .favorite__icon {
-    font-size: 25px;
+  .likes__container {
+    .likes__icon {
+      font-size: 23px;
+    }
   }
 }
