@@ -5,6 +5,7 @@ export const postsSlice = createSlice({
   initialState: {
     errorMessage: undefined,
     isLoading: false,
+    isCreating: false,
     lt: undefined,
     posts: [],
     openPost: {},
@@ -14,9 +15,18 @@ export const postsSlice = createSlice({
       state.isLoading = true;
       state.lt = payload || undefined;
     },
+    onCreating: (state) => {
+      state.isCreating = true;
+    },
     onSetPosts: (state, { payload }) => {
       state.posts = payload;
       state.isLoading = false;
+    },
+    onAddNewPost: (state, { payload }) => {
+      state.isCreating = false;
+      const newPosts = state.posts;
+      newPosts.unshift(payload);
+      state.posts = newPosts;
     },
     onSetOpenPost: (state, { payload }) => {
       state.openPost = payload;
@@ -31,5 +41,12 @@ export const postsSlice = createSlice({
   },
 });
 
-export const { onLoading, onSetPosts, onSetOpenPost, onSetErrorMessage, onClearErrorMessage } =
-  postsSlice.actions;
+export const {
+  onAddNewPost,
+  onClearErrorMessage,
+  onCreating,
+  onLoading,
+  onSetErrorMessage,
+  onSetOpenPost,
+  onSetPosts,
+} = postsSlice.actions;
