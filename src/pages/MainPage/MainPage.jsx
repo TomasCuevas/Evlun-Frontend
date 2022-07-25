@@ -7,9 +7,14 @@ import { Container } from '../../components/Container/Container';
 import { Main } from '../../components/Main/Main';
 
 /**
- * layouts
+ * @layouts
  */
 import { FeedPostsHome, Nav, NavSwitch, NavTopHome, NewPost } from '../../layouts';
+
+/**
+ * @pages
+ */
+import { LoadingPage } from '../LoadingPage/LoadingPage';
 
 /**
  * @provider
@@ -22,11 +27,13 @@ import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchConte
 import { usePostsStore } from '../../hooks/usePostsStore';
 
 export const MainPage = () => {
-  const { startLoadingPosts } = usePostsStore();
+  const { isLoading, startLoadingPosts } = usePostsStore();
 
   useEffect(() => {
     startLoadingPosts();
   }, []);
+
+  if (isLoading) return <LoadingPage />;
 
   return (
     <NavSwitchProvider>
