@@ -9,7 +9,6 @@ import {
   MdOutlineFavorite,
   MdOutlineFavoriteBorder,
 } from 'react-icons/md';
-import { addRemoveLikeToAPost } from '../../helpers/addRemoveLikeToAPost';
 
 /**
  * @hook
@@ -23,7 +22,7 @@ import { usePostsStore } from '../../hooks/usePostsStore';
 import Styles from './OpenPostBottom.module.scss';
 
 export const OpenPostBottom = ({ changeLikesCount }) => {
-  const { openPost } = usePostsStore();
+  const { openPost, startLikeToAPost } = usePostsStore();
   const { _id } = useAuthStore();
   const [liked, setLiked] = useState(false);
 
@@ -31,14 +30,14 @@ export const OpenPostBottom = ({ changeLikesCount }) => {
     event.stopPropagation();
     setLiked(true);
     changeLikesCount(true);
-    await addRemoveLikeToAPost(openPost._id);
+    await startLikeToAPost(openPost._id);
   };
 
   const onUnlike = async (event) => {
     event.stopPropagation();
     setLiked(false);
     changeLikesCount(false);
-    await addRemoveLikeToAPost(openPost._id);
+    await startLikeToAPost(openPost._id);
   };
 
   useEffect(() => {

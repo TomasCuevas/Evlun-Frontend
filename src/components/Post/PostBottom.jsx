@@ -2,11 +2,6 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * @helpers
- */
-import { addRemoveLikeToAPost } from '../../helpers/addRemoveLikeToAPost';
-
-/**
  * @icons
  */
 import {
@@ -24,9 +19,11 @@ import { useAuthStore } from '../../hooks/useAuthStore';
  * @styles
  */
 import Styles from './postBottom.module.scss';
+import { usePostsStore } from '../../hooks/usePostsStore';
 
 export const PostBottom = ({ postId, likes, comments }) => {
   const { _id } = useAuthStore();
+  const { startLikeToAPost } = usePostsStore();
   const [like, setLike] = useState(false);
   const [likesCount, setLikesCount] = useState(likes.length);
 
@@ -34,14 +31,14 @@ export const PostBottom = ({ postId, likes, comments }) => {
     event.stopPropagation();
     setLike(true);
     setLikesCount(likesCount + 1);
-    await addRemoveLikeToAPost(postId);
+    await startLikeToAPost(postId);
   };
 
   const onUnlike = async (event) => {
     event.stopPropagation();
     setLike(false);
     setLikesCount(likesCount - 1);
-    await addRemoveLikeToAPost(postId);
+    await startLikeToAPost(postId);
   };
 
   useEffect(() => {
