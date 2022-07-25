@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+
 import { postApi } from '../apis';
 import { onLoading, onSetErrorMessage, onSetPosts, onSetOpenPost } from '../store/posts/postsSlice';
 
@@ -39,7 +40,7 @@ export const usePostsStore = () => {
     posts,
 
     // methods
-    startLoadingPosts,
     startLoadingOpenPost,
+    startLoadingPosts,
   };
 };

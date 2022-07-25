@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 /**
  * @components
  */
-import { PostAvatarSection } from '../../components/Post/PostAvatarSection';
-import { PostBottom } from '../../components/Post/PostBottom';
-import { PostContent } from '../../components/Post/PostContent';
-import { PostTop } from '../../components/Post/PostTop';
+import { PostAvatarSection, PostBottom, PostContent, PostTop } from '../../components/Post';
 
 /**
  * @styles
@@ -25,7 +22,7 @@ export const Post = ({ post }) => {
       <div className={Styles.post__section}>
         <PostTop name={post.added_by.name} username={post.added_by.username} date={post.date} />
         <PostContent _id={post._id} content={post.content} />
-        <PostBottom />
+        <PostBottom postId={post._id} likes={post.likes} comments={post.comments} />
       </div>
     </article>
   );
