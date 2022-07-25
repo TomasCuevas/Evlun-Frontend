@@ -1,11 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { postApi } from '../apis';
-import { onLoading, onSetErrorMessage, onSetPosts, onSetOpenPost } from '../store/posts/postsSlice';
+import {
+  onAddNewPost,
+  onCreating,
+  onLoading,
+  onSetErrorMessage,
+  onSetOpenPost,
+  onSetPosts,
+} from '../store/posts/postsSlice';
 
 export const usePostsStore = () => {
   const dispatch = useDispatch();
-  const { errorMessage, isLoading, posts, openPost } = useSelector((state) => state.posts);
+  const { errorMessage, isLoading, posts, openPost, isCreating } = useSelector(
+    (state) => state.posts,
+  );
 
   const startLoadingPosts = async () => {
     try {
@@ -32,14 +41,38 @@ export const usePostsStore = () => {
     }
   };
 
+  const startLikeToAPost = async (postId) => {
+    try {
+      const { data } = await postApi.post(`/like?id=${postId}`);
+
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const startCreateNewPosts = async (content) => {
+    try {
+      dispatch(onCreating());
+      const { data } = await postApi.post('/create', { content });
+      dispatch(onAddNewPost(data.post));
+    } catch (error) {
+      console.log(error);
+      dispatch(onSetErrorMessage(error.response.data.msg));
+    }
+  };
+
   return {
     // properties
     errorMessage,
+    isCreating,
     isLoading,
     openPost,
     posts,
 
     // methods
+    startCreateNewPosts,
+    startLikeToAPost,
     startLoadingOpenPost,
     startLoadingPosts,
   };
