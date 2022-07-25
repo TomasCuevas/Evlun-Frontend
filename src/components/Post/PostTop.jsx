@@ -25,7 +25,7 @@ export const PostTop = ({ name, username, date }) => {
   };
 
   return (
-    <div className={styles.post__top}>
+    <section className={styles.post__top}>
       <div onClick={onNavigate} className={styles.post__top_left}>
         <div className={styles.post__top_name}>
           <span className={styles.post__name}>{name}</span>
@@ -46,7 +46,7 @@ export const PostTop = ({ name, username, date }) => {
           <MdMoreHoriz className={styles.option__icon} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

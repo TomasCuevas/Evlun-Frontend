@@ -14,9 +14,9 @@ export const PostAvatarSection = ({ avatar, name, username }) => {
   };
 
   return (
-    <div onClick={onNavigate} className={styles.avatar__section}>
+    <section onClick={onNavigate} className={styles.avatar__section}>
       <img src={avatar} alt={name} className={styles.avatar} />
-    </div>
+    </section>
   );
 };
 

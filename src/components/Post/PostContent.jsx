@@ -14,9 +14,9 @@ export const PostContent = ({ _id, content }) => {
   };
 
   return (
-    <div onClick={onNavigate} className={styles.post__content}>
+    <section onClick={onNavigate} className={styles.post__content}>
       <span className={styles.content}>{content}</span>
-    </div>
+    </section>
   );
 };
 
