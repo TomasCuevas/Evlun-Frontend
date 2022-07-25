@@ -18,10 +18,11 @@ import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchConte
 export const ExplorePage = () => {
   return (
     <NavSwitchProvider>
-      <NavTopExplore />
-      <Nav />
       <NavSwitch />
-      <Main></Main>
+      <Main>
+        <NavTopExplore />
+        <Nav />
+      </Main>
     </NavSwitchProvider>
   );
 };

@@ -39,13 +39,13 @@ export const ProfilePage = () => {
 
   return (
     <NavSwitchProvider>
-      <Nav />
-      <NavTopProfile />
       <Main>
+        <NavTopProfile />
         <ProfileHero />
         <Container>
           <FeedPostsProfile />
         </Container>
+        <Nav />
       </Main>
     </NavSwitchProvider>
   );

@@ -37,14 +37,14 @@ export const MainPage = () => {
 
   return (
     <NavSwitchProvider>
-      <NavTopHome />
-      <Nav />
       <NavSwitch />
       <Main>
+        <NavTopHome />
         <Container mt={30}>
           <NewPost />
           <FeedPostsHome />
         </Container>
+        <Nav />
       </Main>
     </NavSwitchProvider>
   );
