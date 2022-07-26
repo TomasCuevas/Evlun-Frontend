@@ -1,55 +1,6 @@
 .newpost__container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   border-bottom: 1px solid #3c3d4f;
-  padding-bottom: 10px;
-
-  .top__section {
-    display: flex;
-    gap: 10px;
-
-    .input__section {
-      width: 100%;
-
-      .input {
-        width: 100%;
-        padding: 10px 0;
-        background: none;
-        color: #ebebec;
-        font-size: 19px;
-        outline: none;
-        border: none;
-        resize: none;
-        overflow: hidden;
-        border-bottom: 1px solid #0000;
-      }
-      .input:disabled {
-        color: #b6b7bd;
-      }
-    }
-  }
-
-  .botton__section {
-    .button__container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-      min-height: 30px;
-
-      .button {
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        background-color: #24203f;
-        color: #ebebec;
-        font-weight: 500;
-        font-size: 0.9rem;
-      }
-      .button:disabled {
-        background-color: #b6b7bd;
-      }
-    }
-  }
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
