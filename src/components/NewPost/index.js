@@ -1,2 +1,2 @@
 export * from './AvatarSection.jsx';
-export * from './FormSection';
+export * from './PostFormSection';

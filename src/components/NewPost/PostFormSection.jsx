@@ -9,9 +9,9 @@ import { usePostsStore } from '../../hooks/usePostsStore';
 /**
  * @styles
  */
-import Styles from './FormSection.module.scss';
+import Styles from './PostFormSection.module.scss';
 
-export const FormSection = () => {
+export const PostFormSection = () => {
   const { startCreateNewPosts, isCreating } = usePostsStore();
   const { post, onInputChange } = useForm({
     post: '',
@@ -30,6 +30,7 @@ export const FormSection = () => {
     await startCreateNewPosts(post);
     onInputChange({ target: { value: '', name: 'post' } });
   };
+
   return (
     <section className={Styles.form__section}>
       <form className={Styles.form__container}>
