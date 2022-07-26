@@ -1,0 +1,45 @@
+.form__section {
+  width: 100%;
+
+  .form__container {
+    display: flex;
+    flex-direction: column;
+
+    .input {
+      background: none;
+      border-bottom: 1px solid #0000;
+      border: none;
+      color: #ebebec;
+      font-size: 19px;
+      outline: none;
+      overflow: hidden;
+      padding: 10px 0;
+      resize: none;
+      width: 100%;
+    }
+    .input:disabled {
+      color: #b6b7bd;
+    }
+
+    .button__container {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      margin: 10px 0;
+      width: 100%;
+
+      .button {
+        background-color: #24203f;
+        border-radius: 15px;
+        border: none;
+        color: #ebebec;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 10px 20px;
+      }
+      .button:disabled {
+        background-color: #b6b7bd;
+      }
+    }
+  }
+}
