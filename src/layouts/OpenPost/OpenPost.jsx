@@ -29,7 +29,7 @@ export const OpenPost = () => {
   };
 
   return (
-    <article className={Styles}>
+    <article className={Styles.post__container}>
       <OpenPostTop />
       <OpenPostContent />
       <OpenPostDate />

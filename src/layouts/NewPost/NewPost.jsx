@@ -1,7 +1,7 @@
 /**
  * @components
  */
-import { AvatarSection, FormSection } from '../../components/NewPost';
+import { AvatarSection, PostFormSection } from '../../components/NewPost';
 
 /**
  * @styles
@@ -12,7 +12,7 @@ export const NewPost = () => {
   return (
     <article className={Styles.newpost__container}>
       <AvatarSection />
-      <FormSection />
+      <PostFormSection />
     </article>
   );
 };
