@@ -6,20 +6,30 @@ import { useParams } from 'react-router-dom';
  */
 import { Container } from '../../components/Container/Container';
 import { Main } from '../../components/Main/Main';
-import { usePostsStore } from '../../hooks/usePostsStore';
 
 /**
  * @layouts
  */
-import { Nav, NavTopPost, OpenPost } from '../../layouts';
+import { Nav, NavTopPost, NewComment, OpenPost, FeedComments } from '../../layouts';
+
+/**
+ * @pages
+ */
 import { LoadingPage } from '../LoadingPage/LoadingPage';
+
+/**
+ * @hooks
+ */
+import { useCommentsStore, usePostsStore } from '../../hooks';
 
 export const PostPage = () => {
   const { isLoading, startLoadingOpenPost } = usePostsStore();
+  const { startLoadingComments } = useCommentsStore();
   const { id } = useParams();
 
   useEffect(() => {
     startLoadingOpenPost(id);
+    startLoadingComments(id);
   }, [id]);
 
   if (isLoading) return <LoadingPage />;
@@ -31,6 +41,8 @@ export const PostPage = () => {
       <Main>
         <Container mt={20}>
           <OpenPost />
+          <NewComment />
+          <FeedComments />
         </Container>
       </Main>
     </>
