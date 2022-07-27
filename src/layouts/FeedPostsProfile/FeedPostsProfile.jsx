@@ -13,6 +13,11 @@ import { useProfileStore } from '../../hooks/useProfileStore';
  */
 import Styles from './FeedPostsProfile.module.scss';
 
+/**
+ * @context
+ */
+import { PostContext } from '../../context';
+
 export const FeedPostsProfile = () => {
   const { posts } = useProfileStore();
 
@@ -20,7 +25,9 @@ export const FeedPostsProfile = () => {
     <section className={Styles.feedposts__container}>
       <div className={Styles.allposts__container}>
         {posts.map((post) => (
-          <Post key={post._id} post={post} />
+          <PostContext.Provider key={post._id} value={{ ...post }}>
+            <Post />
+          </PostContext.Provider>
         ))}
       </div>
     </section>
