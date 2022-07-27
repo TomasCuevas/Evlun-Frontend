@@ -9,10 +9,10 @@ import Styles from './AvatarSection.module.scss';
 /**
  * @context
  */
-import { CommentContext } from '../../context';
+import { PostContext } from '../../context';
 
 export const AvatarSection = () => {
-  const { added_by: addedBy } = useContext(CommentContext);
+  const { added_by: addedBy } = useContext(PostContext);
   const navigate = useNavigate();
 
   const onNavigate = () => {
@@ -21,7 +21,7 @@ export const AvatarSection = () => {
 
   return (
     <section onClick={onNavigate} className={Styles.avatar__section}>
-      {<img src={addedBy.avatar} alt={addedBy.name} className={Styles.avatar} />}
+      <img src={addedBy.avatar} alt={addedBy.name} className={Styles.avatar} />
     </section>
   );
 };

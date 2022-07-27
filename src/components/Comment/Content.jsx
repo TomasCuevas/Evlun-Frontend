@@ -8,7 +8,7 @@ import Styles from './Content.module.scss';
 /**
  * @context
  */
-import { CommentContext } from '../../contexts';
+import { CommentContext } from '../../context';
 
 export const Content = () => {
   const { content } = useContext(CommentContext);

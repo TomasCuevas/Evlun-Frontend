@@ -18,7 +18,7 @@ import Styles from './Top.module.scss';
 /**
  * @context
  */
-import { CommentContext } from '../../contexts';
+import { CommentContext } from '../../context';
 
 export const Top = () => {
   const { added_by: addedBy, date } = useContext(CommentContext);

@@ -18,7 +18,7 @@ import Styles from './Bottom.module.scss';
 /**
  * @context
  */
-import { CommentContext } from '../../contexts';
+import { CommentContext } from '../../context';
 
 export const Bottom = () => {
   const { likes, _id: commentId } = useContext(CommentContext);
