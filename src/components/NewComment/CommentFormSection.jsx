@@ -3,7 +3,7 @@ import { useState } from 'react';
 /**
  * @hooks
  */
-import { useForm, usePostsStore } from '../../hooks';
+import { useForm, useCommentsStore, usePostsStore } from '../../hooks';
 
 /**
  * @styles
@@ -11,9 +11,10 @@ import { useForm, usePostsStore } from '../../hooks';
 import Styles from './CommentFormSection.module.scss';
 
 export const CommentFormSection = () => {
-  const { startCreateNewPosts, isCreating } = usePostsStore();
-  const { post, onInputChange } = useForm({
-    post: '',
+  const { startCreateNewComment, isCreating } = useCommentsStore();
+  const { openPost } = usePostsStore();
+  const { comment, onInputChange } = useForm({
+    comment: '',
   });
   const [height, setHeight] = useState(40);
 
@@ -24,10 +25,10 @@ export const CommentFormSection = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    if (post.length < 1 || post.length > 155) return;
+    if (comment.length < 1 || comment.length > 155) return;
 
-    await startCreateNewPosts(post);
-    onInputChange({ target: { value: '', name: 'post' } });
+    await startCreateNewComment(comment, openPost._id);
+    onInputChange({ target: { value: '', name: 'comment' } });
   };
 
   return (
@@ -37,12 +38,12 @@ export const CommentFormSection = () => {
           className={Styles.input}
           disabled={isCreating}
           maxLength={155}
-          name="post"
+          name="comment"
           onChange={onInputChange}
           onInput={onInput}
           placeholder="¿Qué está pasando?"
           style={{ height }}
-          value={post}
+          value={comment}
         />
         <div className={Styles.button__container}>
           <button type="submit" disabled={isCreating} className={Styles.button} onClick={onSubmit}>
