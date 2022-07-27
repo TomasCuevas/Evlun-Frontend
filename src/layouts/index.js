@@ -1,3 +1,5 @@
+export * from './Comment/Comment';
+export * from './FeedComments/FeedComments';
 export * from './FeedPostsHome/FeedPostsHome';
 export * from './FeedPostsProfile/FeedPostsProfile';
 export * from './Nav/Nav';
