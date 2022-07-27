@@ -1,0 +1,14 @@
+.comment__container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #3c3d4f;
+
+  .comment__section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
