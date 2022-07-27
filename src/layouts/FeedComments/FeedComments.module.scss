@@ -1,0 +1,8 @@
+.feedcomments__container {
+  min-height: 100%;
+
+  .allcomments__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
