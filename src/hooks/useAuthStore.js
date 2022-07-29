@@ -60,6 +60,15 @@ export const useAuthStore = () => {
     }
   };
 
+  const startLogout = async () => {
+    try {
+      dispatch(onLogout());
+      localStorage.clear();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     // properties
     errorMessage,
@@ -70,6 +79,7 @@ export const useAuthStore = () => {
     // methods
     startChecking,
     startLogin,
+    startLogout,
     startSignup,
   };
 };
