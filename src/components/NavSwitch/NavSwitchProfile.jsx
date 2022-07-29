@@ -4,40 +4,38 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 /**
  * @styles
  */
-import styles from './navSwitchProfile.module.scss';
+import Styles from './navSwitchProfile.module.scss';
 
 export const NavSwitchProfile = () => {
-  const { user } = useAuthStore();
+  const { followers, followings, username, avatar, name } = useAuthStore();
   const navigate = useNavigate();
-
-  const { avatar, name, username, followings, followers } = user;
 
   const onNavigate = () => navigate(`profile/${username}`);
 
   return (
-    <section className={styles.profile} onClick={onNavigate}>
-      <div className={styles.profile__top}>
-        <img src={avatar} alt="profile-img" className={styles.profile__img} />
+    <section className={Styles.profile} onClick={onNavigate}>
+      <div className={Styles.profile__top}>
+        <img src={avatar} alt="profile-img" className={Styles.profile__img} />
       </div>
 
-      <div className={styles.profile__medium}>
-        <div className={styles.profile__info}>
-          <p className={styles.name}>{name}</p>
+      <div className={Styles.profile__medium}>
+        <div className={Styles.profile__info}>
+          <p className={Styles.name}>{name}</p>
         </div>
-        <div className={styles.profile__info}>
-          <p className={styles.username}>{username}</p>
+        <div className={Styles.profile__info}>
+          <p className={Styles.username}>{username}</p>
         </div>
       </div>
 
-      <div className={styles.profile__bottom}>
-        <div className={styles.profile__numbers_container}>
-          <p className={styles.profile__numbers}>
-            <span>{followings}</span> Siguiendo
+      <div className={Styles.profile__bottom}>
+        <div className={Styles.profile__numbers_container}>
+          <p className={Styles.profile__numbers}>
+            <span>{followings.length}</span> Siguiendo
           </p>
         </div>
-        <div className={styles.profile__numbers_container}>
-          <p className={styles.profile__numbers}>
-            <span>{followers}</span> Seguidores
+        <div className={Styles.profile__numbers_container}>
+          <p className={Styles.profile__numbers}>
+            <span>{followers.length}</span> Seguidores
           </p>
         </div>
       </div>

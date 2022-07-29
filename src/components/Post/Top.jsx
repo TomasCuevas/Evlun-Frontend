@@ -14,6 +14,10 @@ import { MdMoreHoriz } from 'react-icons/md';
  * @styles
  */
 import Styles from './Top.module.scss';
+
+/**
+ * @context
+ */
 import { PostContext } from '../../context';
 
 export const Top = () => {

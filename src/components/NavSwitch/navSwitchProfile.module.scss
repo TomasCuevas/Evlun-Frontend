@@ -17,16 +17,28 @@
     flex-direction: column;
 
     .profile__info {
+      flex-wrap: nowrap;
+      max-height: 22px;
+      width: 100%;
+
       .name {
         color: #ebebec;
         font-size: 18px;
         font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
       }
 
       .username {
         color: #b6b7bd;
         font-size: 14px;
         font-weight: 300;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
       }
     }
   }
