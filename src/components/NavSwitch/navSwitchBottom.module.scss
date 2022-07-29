@@ -4,12 +4,8 @@
   .logout__container {
     height: 50px;
     border-top: 1px solid #b6b7bd;
-
-    a {
-      display: flex;
-      align-items: center;
-      height: 50px;
-    }
+    display: flex;
+    align-items: center;
 
     .text {
       color: #b6b7bd;

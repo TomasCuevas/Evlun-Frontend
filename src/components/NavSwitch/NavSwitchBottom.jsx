@@ -1,4 +1,7 @@
-import { Link } from 'react-router-dom';
+/**
+ * @hooks
+ */
+import { useAuthStore } from '../../hooks/useAuthStore';
 
 /**
  * @styles
@@ -6,12 +9,14 @@ import { Link } from 'react-router-dom';
 import styles from './navSwitchBottom.module.scss';
 
 export const NavSwitchBottom = () => {
+  const { startLogout } = useAuthStore();
+
   return (
     <section className={styles.bottom}>
       <div className={styles.logout__container}>
-        <Link to='/logout'>
-          <span className={styles.text}>Cerrar Sesión</span>
-        </Link>
+        <span onClick={startLogout} className={styles.text}>
+          Cerrar Sesión
+        </span>
       </div>
     </section>
   );
