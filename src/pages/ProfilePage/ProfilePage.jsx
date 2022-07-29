@@ -18,11 +18,6 @@ import { LoadingPage } from '../LoadingPage/LoadingPage';
 import { FeedPostsProfile, Nav, NavTopProfile, ProfileHero } from '../../layouts';
 
 /**
- * @provider
- */
-import { NavSwitchProvider } from '../../context/NavSwitchContext/NavSwitchContext';
-
-/**
  * @hooks
  */
 import { useProfileStore } from '../../hooks/useProfileStore';
@@ -38,15 +33,13 @@ export const ProfilePage = () => {
   if (isLoading) return <LoadingPage />;
 
   return (
-    <NavSwitchProvider>
-      <Main>
-        <NavTopProfile />
-        <ProfileHero />
-        <Container>
-          <FeedPostsProfile />
-        </Container>
-        <Nav />
-      </Main>
-    </NavSwitchProvider>
+    <Main>
+      <NavTopProfile />
+      <ProfileHero />
+      <Container>
+        <FeedPostsProfile />
+      </Container>
+      <Nav />
+    </Main>
   );
 };
