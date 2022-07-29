@@ -1,14 +1,15 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import dayjs from 'dayjs';
-import { es } from 'dayjs/locale/es';
-import relativeTime from 'dayjs/plugin/relativeTime';
-
 /**
  * @icons
  */
 import { MdMoreHoriz } from 'react-icons/md';
+
+/**
+ * @helpers
+ */
+import { getRelativeTime } from '../../helpers/getRelativeTime';
 
 /**
  * @styles
@@ -24,8 +25,7 @@ export const Top = () => {
   const { added_by: addedBy, date } = useContext(CommentContext);
   const navigate = useNavigate();
 
-  dayjs.extend(relativeTime);
-  const time = dayjs(date).locale('es').fromNow(true);
+  const relativeTime = getRelativeTime(date);
 
   const onNavigate = () => {
     navigate(`/profile/${addedBy.username}`);
@@ -44,7 +44,7 @@ export const Top = () => {
           <span className={Styles.comment__decorate}>·</span>
         </div>
         <div className={Styles.comment__top_relativetime}>
-          <span className={Styles.comment__relativetime}>{time}</span>
+          <span className={Styles.comment__relativetime}>{relativeTime}</span>
         </div>
       </div>
 

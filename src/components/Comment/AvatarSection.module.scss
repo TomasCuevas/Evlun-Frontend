@@ -1,8 +1,7 @@
 .avatar__section {
   display: flex;
   flex-direction: column;
-  min-width: 45px;
-  max-width: 10%;
+  width: 100%;
 
   .avatar {
     width: 45px;
