@@ -8,7 +8,7 @@ import { MdOutlineFavoriteBorder, MdOutlineFavorite } from 'react-icons/md';
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
+import { useAuthStore, useCommentsStore } from '../../hooks';
 
 /**
  * @styles
@@ -23,7 +23,7 @@ import { CommentContext } from '../../context';
 export const Bottom = () => {
   const { likes, _id: commentId } = useContext(CommentContext);
   const { _id } = useAuthStore();
-  // const { startLikeToAPost } = usePostsStore();
+  const { startLikeToAComment } = useCommentsStore();
   const [like, setLike] = useState(false);
   const [likesCount, setLikesCount] = useState(likes.length);
 
@@ -31,14 +31,14 @@ export const Bottom = () => {
     event.stopPropagation();
     setLike(true);
     setLikesCount(likesCount + 1);
-    // await startLikeToAPost(postId);
+    await startLikeToAComment(commentId);
   };
 
   const onUnlike = async (event) => {
     event.stopPropagation();
     setLike(false);
     setLikesCount(likesCount - 1);
-    // await startLikeToAPost(postId);
+    await startLikeToAComment(commentId);
   };
 
   useEffect(() => {

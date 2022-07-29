@@ -41,16 +41,6 @@ export const usePostsStore = () => {
     }
   };
 
-  const startLikeToAPost = async (postId) => {
-    try {
-      const { data } = await postApi.post(`/like?id=${postId}`);
-
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const startCreateNewPosts = async (content) => {
     try {
       dispatch(onCreating());
@@ -59,6 +49,16 @@ export const usePostsStore = () => {
     } catch (error) {
       console.log(error);
       dispatch(onSetErrorMessage(error.response.data.msg));
+    }
+  };
+
+  const startLikeToAPost = async (postId) => {
+    try {
+      const { data } = await postApi.post(`/like?id=${postId}`);
+
+      return data;
+    } catch (error) {
+      console.log(error);
     }
   };
 

@@ -37,6 +37,16 @@ export const useCommentsStore = () => {
     }
   };
 
+  const startLikeToAComment = async (commentId) => {
+    try {
+      const { data } = await commentApi.post(`/like?id=${commentId}`);
+
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     // properties
     comments,
@@ -45,7 +55,8 @@ export const useCommentsStore = () => {
     isLoading,
 
     // methods
-    startLoadingComments,
     startCreateNewComment,
+    startLikeToAComment,
+    startLoadingComments,
   };
 };

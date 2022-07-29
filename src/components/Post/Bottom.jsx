@@ -12,8 +12,7 @@ import {
 /**
  * @hooks
  */
-import { useAuthStore } from '../../hooks/useAuthStore';
-import { usePostsStore } from '../../hooks/usePostsStore';
+import { useAuthStore, usePostsStore } from '../../hooks';
 
 /**
  * @styles
