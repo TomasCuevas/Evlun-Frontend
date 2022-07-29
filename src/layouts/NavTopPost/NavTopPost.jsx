@@ -15,6 +15,7 @@ export const NavTopPost = () => {
       <Container>
         <div className={Styles.nav__container}>
           <Back />
+          <span className={Styles.nav__text}>Post</span>
         </div>
       </Container>
     </div>
